@@ -8,6 +8,11 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 const HOST = process.env.HOST || "127.0.0.1";
 const PORT = process.env.PORT || "3000";
 
+// add hot-reload related code to entry chunks
+Object.keys(webpackBaseConfig.entry).forEach(function (name) {
+	webpackBaseConfig.entry[name] = ['react-hot-loader/patch'].concat(webpackBaseConfig.entry[name])
+});
+
 module.exports = merge(webpackBaseConfig, {
 	devtool: process.env.WEBPACK_DEVTOOL || 'eval-source-map',
 	module: {
