@@ -1,4 +1,4 @@
-# react-webpack-babel
+# brjw_emp
 Simple React Webpack Babel Starter Kit
 
 Tired of complicated starters with 200MB of dependencies which are hard to understand and modify?
@@ -18,7 +18,7 @@ Try this is a simple [React](https://facebook.github.io/react/), [Webpack](http:
 * Fork and clone the project:
 
 ```
-git clone https://github.com/alicoding/react-webpack-babel.git
+git clone https://github.com/InfcnFrontDev/brjw_emp.git
 ```
 
 * Then install the dependencies:

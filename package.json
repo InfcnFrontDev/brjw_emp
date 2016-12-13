@@ -1,5 +1,5 @@
 {
-  "name": "react-webpack-babel",
+  "name": "brjw_emp",
   "version": "0.0.3",
   "description": "React Webpack Babel Starter Kit",
   "main": "''",
@@ -10,11 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alicoding/react-webpack-babel"
+    "url": "https://github.com/InfcnFrontDev/brjw_emp"
   },
-  "author": "Ali Al Dallal",
+  "author": "yangkk",
   "license": "MIT",
-  "homepage": "https://github.com/alicoding/react-webpack-babel#readme",
+  "homepage": "https://github.com/InfcnFrontDev/brjw_emp#readme",
   "dependencies": {
     "node-sass": "^3.13.0",
     "react": "15.4.1",
