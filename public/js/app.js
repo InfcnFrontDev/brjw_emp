@@ -14,15 +14,17 @@ Ext.onReady(function () {
 			type: 'border',
 			padding: '0'
 		},
-		items: [{
-			region: 'north',
-			height: 50,
-			bodyPadding: 5,
-			split: true,
-			html: [
-				'能源管理平台'
-			].join('')
-		}, {
+		items: [{  
+            region: 'north',  
+            xtype: "panel",  
+
+            title: "能源管理平台",  
+            autoHeight: true,  
+            border: false,  
+            margins: '0 0 5 0'  ,
+            tools: [
+                {type: 'menus'}]
+        },{
 			region: 'west',
 			bodyPadding: 5,
 			title: 'Collapse/Width Panel',
@@ -49,16 +51,20 @@ Ext.onReady(function () {
 
 			items: [{
 				title: '我的主页',
-				html: 'mysimplegrid1'
+				html: 'mysimplegrid1',
+				closable: true, 
 			}, {
 				title: '我的主页',
-				html: 'mysimplegrid2'
+				html: 'mysimplegrid2',
+				closable: true, 
 			}, {
 				title: '我的主页',
-				html: 'mysimplegrid3'
+				html: 'mysimplegrid3',
+				closable: true, 
 			}, {
 				title: '我的主页',
-				html: '<iframe src="http://www.baidu.com/" width="100%" height="100%" frameborder="0">'
+				html: '<iframe src="http://www.baidu.com/" width="100%" height="100%" frameborder="0">',
+				closable: true, 
 			}]
 		}]
 	});
