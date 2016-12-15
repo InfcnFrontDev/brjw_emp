@@ -22,13 +22,16 @@ Ext.define('KitchenSink.view.tree.Reorder', {
 	width: 'auto',
 
 	useArrows: true,
+	listeners:{
+		'itemclick':tree_event
+	},
 
 	store: {
 		type: 'tree',
 		model: 'brjwApp.MenuItem',
 		proxy: {
 			type: 'ajax',
-			url: 'http://192.168.1.165/WebServices/MenuService.ashx?statusCode=NaviTree'
+			url: 'http://192.168.1.165/WebServices/MenuService.ashx?statusCode=ExtTree'
 		},
 		root: {
 			text: 'Ext JS',
@@ -47,44 +50,31 @@ Ext.define('KitchenSink.view.tree.Reorder', {
 				this.proxy.extraParams.pid = node.id;
 				if(node.data.pid)
 					this.proxy.extraParams.parent = node.data.pid;
-			},
-			'nodebeforeappend': function (obj , node , eOpts) {
-				console.log(node.data);
-				if(node.data.isParent && node.data.isParent == 'false')
-					node.data.leaf = true;
 			}
 		}
 	}
 });
+var tab = Ext.create('Ext.TabPanel', {
+	region : 'center',
+	deferredRender : false,
+	activeTab : 0,
+	resizeTabs : true, // turn on tab resizing
+	minTabWidth : 115,
+	tabWidth : 135,
+	enableTabScroll : true
+});
+
+function tree_event(node,event){
+	console.log(event.data.id);
+
+};
 
 Ext.define('KitchenSink.view.tree.ReorderController', {
 	extend: 'Ext.app.ViewController',
 
 	alias: 'controller.tree-reorder',
 
-	onExpandAllClick: function () {
-		var view = this.getView(),
-			toolbar = view.lookup('tbar');
 
-		view.getEl().mask('Expanding tree...');
-		toolbar.disable();
-
-		view.expandAll(function() {
-			view.getEl().unmask();
-			toolbar.enable();
-		});
-	},
-
-	onCollapseAllClick: function () {
-		var view = this.getView(),
-			toolbar = view.lookup('tbar');
-
-		toolbar.disable();
-
-		view.collapseAll(function() {
-			toolbar.enable();
-		});
-	}
 });
 
 
@@ -106,13 +96,13 @@ Ext.onReady(function () {
 			type: 'border',
 			padding: '0'
 		},
-		items: [{  
-            region: 'north',  
-            xtype: "panel",  
+		items: [{
+            region: 'north',
+            xtype: "panel",
 
-            title: "能源管理平台",  
-            autoHeight: true,  
-            border: false,  
+            title: "能源管理平台",
+            autoHeight: true,
+            border: false,
             margins: '0 0 5 0'  ,
             tools: [
                 {type: 'menus'}]
@@ -139,19 +129,19 @@ Ext.onReady(function () {
 			items: [{
 				title: '我的主页',
 				html: 'mysimplegrid1',
-				closable: true, 
+				closable: true,
 			}, {
 				title: '我的主页',
 				html: 'mysimplegrid2',
-				closable: true, 
+				closable: true,
 			}, {
 				title: '我的主页',
 				html: 'mysimplegrid3',
-				closable: true, 
+				closable: true,
 			}, {
 				title: '我的主页',
 				html: '<iframe src="http://www.baidu.com/" width="100%" height="100%" frameborder="0">',
-				closable: true, 
+				closable: true,
 			}]
 		}]
 	});
