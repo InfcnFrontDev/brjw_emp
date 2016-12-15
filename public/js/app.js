@@ -15,15 +15,18 @@ Ext.onReady(function () {
 			padding: '0'
 		},
 		items: [{  
-            region: 'north',  
-            xtype: "panel",  
-
-            title: "能源管理平台",  
-            autoHeight: true,  
-            border: false,  
-            margins: '0 0 5 0'  ,
-            tools: [
-                {type: 'menus'}]
+            region: 'north',   
+            autoHeight: true, 
+            header: false,
+            border: false,  	
+            html: [
+            '<ul class="title-ul">',
+            '<li><img src="images/logo.png"></li>',
+			'<li><h2>能源管理平台</h2></li>',
+            '</ul>'
+				
+			].join('')
+                	
         },{
 			region: 'west',
 			bodyPadding: 5,
