@@ -4,6 +4,7 @@ var webpack = require('webpack');
 var merge = require('webpack-merge');
 var webpackBaseConfig = require('./webpack.base.config');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var BrowserSyncWebpackPlugin = require('browser-sync-webpack-plugin');
 
 const HOST = process.env.HOST || "127.0.0.1";
 const PORT = process.env.PORT || "3000";
@@ -14,6 +15,7 @@ Object.keys(webpackBaseConfig.entry).forEach(function (name) {
 });
 
 module.exports = merge(webpackBaseConfig, {
+	watch: true,
 	devtool: process.env.WEBPACK_DEVTOOL || 'eval-source-map',
 	module: {
 		loaders: [
@@ -55,6 +57,10 @@ module.exports = merge(webpackBaseConfig, {
 		inline: true,
 		// serve index.html in place of 404 responses to allow HTML5 history
 		historyApiFallback: true,
+
+		progress: true,
+
+
 		port: PORT,
 		host: HOST
 	},
@@ -66,6 +72,13 @@ module.exports = merge(webpackBaseConfig, {
 		}),
 		new webpack.optimize.OccurenceOrderPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NoErrorsPlugin()
+		new webpack.NoErrorsPlugin(),
+		new BrowserSyncWebpackPlugin({
+			host: HOST,
+			port: PORT,
+			//proxy: 'localhost:3000',
+			files: 'public/*',
+			server: { baseDir: [ 'public/' ] }
+		})
 	]
 });
