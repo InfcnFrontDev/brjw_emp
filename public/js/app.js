@@ -111,7 +111,8 @@ Ext.onReady(function () {
         },{
 			region: 'west',
 			bodyPadding: 5,
-			title: 'Collapse/Width Panel',
+			title: '<span class="span">Collapse/Width Panel</span>',
+			titleColor:'red',
 			width: 240,
 			split: true,
 			collapsible: true,
