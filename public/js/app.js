@@ -1,3 +1,4 @@
+
 Ext.define('brjwApp.MenuItem', {
 	extend: 'Ext.data.TreeModel',
 	childType: 'brjwApp.MenuItem',
@@ -21,8 +22,8 @@ Ext.define('KitchenSink.view.tree.Reorder', {
 	width: 'auto',
 
 	useArrows: true,
-	listeners: {
-		'itemclick': tree_event
+	listeners:{
+		'itemclick':tree_event
 	},
 
 	store: {
@@ -30,8 +31,7 @@ Ext.define('KitchenSink.view.tree.Reorder', {
 		model: 'brjwApp.MenuItem',
 		proxy: {
 			type: 'ajax',
-			//url: 'http://192.168.1.165/WebServices/MenuService.ashx?statusCode=ExtTree'
-			url: 'data/menu.json'
+			url: 'http://192.168.1.165/WebServices/MenuService.ashx?statusCode=ExtTree'
 		},
 		root: {
 			text: 'Ext JS',
@@ -43,28 +43,28 @@ Ext.define('KitchenSink.view.tree.Reorder', {
 			property: 'text',
 			direction: 'ASC'
 		}],
-		listeners: {
-			'nodebeforeexpand': function (node, eOpts) {
+		listeners : {
+			'nodebeforeexpand' : function(node,eOpts){
 				//点击父亲节点的菜单会将节点的id通过ajax请求，将到后台
 				//console.log(node);
 				this.proxy.extraParams.pid = node.id;
-				if (node.data.pid)
+				if(node.data.pid)
 					this.proxy.extraParams.parent = node.data.pid;
 			}
 		}
 	}
 });
 var tab = Ext.create('Ext.TabPanel', {
-	region: 'center',
-	deferredRender: false,
-	activeTab: 0,
-	resizeTabs: true, // turn on tab resizing
-	minTabWidth: 115,
-	tabWidth: 135,
-	enableTabScroll: true
+	region : 'center',
+	deferredRender : false,
+	activeTab : 0,
+	resizeTabs : true, // turn on tab resizing
+	minTabWidth : 115,
+	tabWidth : 135,
+	enableTabScroll : true
 });
 
-function tree_event(node, event) {
+function tree_event(node,event){
 	console.log(event.data.id);
 
 };
@@ -96,16 +96,21 @@ Ext.onReady(function () {
 			type: 'border',
 			padding: '0'
 		},
-		items: [{
-			region: 'north',
-			xtype: "panel",
-			header: false,
-			autoHeight: true,
-			border: false,
-			margins: '0 0 5 0',
-			html: ['<div style="padding:15px;font-size: 20px;background-color: #28384a;border-bottom: 1px solid #0d1218;color:#fff;font-weight: bold;">能源管理平台</div>'].join('')
-		}, {
+		items: [{  
+            region: 'north',   
+            autoHeight: true, 
+            header: false,
+            border: false,  	
+            html: [
+            '<ul class="title-ul">',
+            '<li><img src="images/logo.png"></li>',
+			'<li><h2>能源管理平台</h2></li>',
+            '</ul>'
+				
+			].join('')
+        },{
 			region: 'west',
+			bodyPadding: 5,
 			title: 'Collapse/Width Panel',
 			width: 240,
 			split: true,
