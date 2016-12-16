@@ -43,14 +43,14 @@ Ext.define('MyUI.controller.Global', {
 		var mainPanel = this.getMainPanel();
 
 		console.log(data.name);
-		var a=true;
+		var a=true,b=0;
 		for(var i=0; i<mainPanel.items.items.length; i++) {
 			//console.log(mainPanel.items.items[i].title);
 			if (data.name == mainPanel.items.items[i].title) {
 				a = false;
+				b = i;
 			}
 		}
-
 		var url = 'http://www.baidu.com/';
 		var myPanel = Ext.create('Ext.Panel', {
 			title: data.name,
@@ -60,8 +60,14 @@ Ext.define('MyUI.controller.Global', {
 		if(a) {
 			mainPanel.add(myPanel);
 		}
+		if(!a){
+			mainPanel.setActiveTab(b);
+			document.getElementsByTagName('iframe')[0].src="http://www.taobao.com"
+		}
 		console.log(myPanel);
 		mainPanel.setActiveItem(myPanel);
+
+
 
 	}
 });
