@@ -2,10 +2,12 @@ Ext.define('MyUI.store.NavTree', {
 	extend: 'Ext.data.TreeStore',
 	model: 'MyUI.model.TreeNode',
 	autoLoad: true,
+	flex: 1,
+	sortable: true,
 
 	proxy: {
 		type: 'ajax',
-		url: 'http://192.168.1.165/WebServices/MenuService.ashx?statusCode=ExtTree'
+		url: 'http://192.168.1.166/WebServices/MenuService.ashx?statusCode=ExtTree'
 	},
 
 	root: {
@@ -20,6 +22,14 @@ Ext.define('MyUI.store.NavTree', {
 			this.proxy.extraParams.pid = node.id;
 			if (node.data.pid)
 				this.proxy.extraParams.parent = node.data.pid;
+		},
+		beforeload : function(store, operation, opts) {
+			//阻止加载
+			if(store._can_load_){
+				return false;
+			}
+			return true;
 		}
+
 	}
 });
