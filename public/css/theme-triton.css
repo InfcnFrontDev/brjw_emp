@@ -1,0 +1,21 @@
+#app-header {
+    background-color: #28384a;
+    border-bottom: 1px solid #0d1218;
+}
+
+#app-header-logo {
+    font-size: 26px;
+    line-height: 1.2;
+    margin: 0 10px;
+}
+#app-header-title, #app-header-logo {
+    color: white;
+}
+#app-header-title {
+    padding: 10px 0 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+#app-header-title, #app-header-logo {
+    color: white;
+}
