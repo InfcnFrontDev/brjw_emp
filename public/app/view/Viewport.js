@@ -10,7 +10,7 @@ Ext.define('MyUI.view.Viewport', {
 		xtype: 'navpanel',
 		split: true,
 		collapsible: true,
-		width: 350,
+		width: 300,
 		minWidth: 100
 	}, {
 		region: 'center',
