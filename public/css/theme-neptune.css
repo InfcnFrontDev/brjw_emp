@@ -1,44 +1,39 @@
-/*标题栏*/
 #toppanel {
     background-color: #28384a;
     border-bottom: 1px solid #0d1218;
 }
 
-/*标题栏 logo*/
 #toppanel-logo {
-    color: white;
     font-size: 26px;
     line-height: 1.2;
     margin: 0 12px;
 }
 
-/*标题栏 title*/
-#toppanel-title {
+#toppanel-title, #toppanel-logo {
     color: white;
+}
+
+#toppanel-title {
     padding: 10px 0 10px 0;
     font-size: 20px;
     font-weight: bold;
 }
 
-/*主题选择 label*/
-#themeswitch .x-form-item-label-text {
-    color: #fff;
-}
-
-/*系统菜单*/
-#systemmenu {
+#toppanel-title, #toppanel-logo {
     color: white;
-    font-size: 21px;
-    cursor: pointer;
 }
 
-/*导航栏 图标*/
 #navpanel .x-title-icon {
     font-size: 20px;
 }
 
-/*内容标签 图标*/
 #mainpanel .x-tab-icon-el {
     font-size: 14px;
 }
 
+.ks-profile-switcher {
+    color: white;
+    font-size: 21px;
+    cursor: pointer;
+    margin: 0 15px;
+}
