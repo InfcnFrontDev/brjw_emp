@@ -1,0 +1,83 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Microsoft YaHei';
+}
+li{
+	list-style: none;
+}
+input{
+	outline: none;
+	border: none;
+	
+}
+body{
+	background: #14A084;
+}
+.login-box{
+	padding-top:50px;
+	text-align: center;
+	width:300px;
+	height:300px;
+	background: transparent;
+	-moz-box-shadow:0px 0px 20px #0A7560; 
+	-webkit-box-shadow:0px 0px 20px #0A7560; 
+	box-shadow:0px 0px 20px #0A7560;
+	position: absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	margin: auto;
+	border-radius: 5px;
+}
+p{
+	text-align: center;
+	color: #4AC9B3;
+	font-family: 'Microsoft YaHei';
+	font-size: 20px;
+	padding-bottom: 50px;
+	
+}
+.box-input{
+	
+	background: #5CBCA8;
+	width:190px;
+	height:30px;
+	border-radius: 5px;
+	float: right;
+}
+
+ul{
+	width:274px;
+	text-align: center;
+}
+li{
+	overflow: hidden;
+}
+li+li{
+	
+	margin-top: 12px;
+}
+label{
+	color: #05725E;
+	
+}
+.denglu,.chongzhi{
+	display: inline-block;
+	width:60px;
+	height:30px;
+	background: #048C74;
+	text-align: center;
+	color: #fff;
+	line-height: 30px;
+}
+.denglu{
+	margin-left: 84px;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}

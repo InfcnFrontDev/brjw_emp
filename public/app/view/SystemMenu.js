@@ -18,7 +18,10 @@ Ext.define('MyUI.view.SystemMenu', {
 				{
 					id: 'logout',
 					text: '退出',
-					iconCls: 'iconfont icon-exit'
+					iconCls: 'iconfont icon-exit',
+					/*handler:function(){
+						location.href="login.html"
+					}*/
 				}
 			]
 		});
