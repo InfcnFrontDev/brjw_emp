@@ -5,11 +5,11 @@ Ext.define('MyUI.view.MainPanel', {
 	id: 'mainpanel',
 	items: [
 		{
-			xtype: 'panel',
+			xtype: 'iframepanel',
+			id: 'tab-home',
 			title: '默认主页',
 			iconCls: 'iconfont icon-home',
-			bodyPadding: 10,
-			html: '默认主页'
+			url: 'pages/home.html'
 		}
 	]
 
