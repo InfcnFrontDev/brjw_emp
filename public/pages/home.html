@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="../plugins/bootsrap/bootstrap.min.css">
+	<script src="../plugins/echart/echarts-all.js"></script>
+<!--
+	<script src="../plugins/bootsrap/bootstrap.min.js"></script>
+-->
+	<script src="../plugins/jquery/jquery-2.0.2.min.js"></script>
+	<style type="text/css">
+		.header
+		{
+			text-align: center;
+		}
+		.chartArea
+		{
+			border: 1px solid #909090;
+			width: 525px;
+			height: 320px;
+			margin-bottom: 5px;
+		}
+		.col-xs-4
+		{
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+		div{
+			display:block;
+		}
+		.container
+		{
+			width: 100%;
+		}
+		body
+		{
+			text-align: center;
+		}
+		.container .row
+		{
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+	</style>
+	<script type="text/javascript">
+
+		function loadDefChart(num) {
+
+			var name = 'chart';
+			name = name + num;
+			var dataroot = "../data/" + name + ".json";
+			$.getJSON(dataroot, function (data) {
+				echarts.init(document.getElementById(name)).setOption(data);
+
+			});
+
+		}
+		for (var i = 1; i <= 9; i++) {
+			loadDefChart(i);
+		}
+	</script>
+</head>
+<body>
+<form id="form1" runat="server">
+	<div class="header">
+		<h1>
+			图表展示板</h1>
+		<hr style="width: 90%; border-top: 3px solid red;" />
+	</div>
+	<div class="container">
+		<div class="row show-grid">
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="center-block">
+					<div class="chartArea center-block" id="chart1">
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="chartArea center-block" id="chart2">
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="chartArea center-block" id="chart3">
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="chartArea center-block" id="chart4">
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="chartArea center-block" id="chart5">
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="chartArea center-block" id="chart6">
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="chartArea center-block" id="chart7">
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="chartArea center-block" id="chart8">
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="chartArea center-block" id="chart9">
+				</div>
+			</div>
+		</div>
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+</form>
+
+</body>
+</html>
