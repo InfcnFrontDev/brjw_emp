@@ -3,7 +3,7 @@
     "name": "太极",
     "id": "4c51f918-1a91-4025-b527-faa347f77a84",
     "pid": "0",
-    "leaf": "true"
+    "isParent": "true"
   },
   {
     "name": "分类4",
@@ -13,27 +13,29 @@
   },
   {
     "name": "桂林机场二期",
-    "id": "4318abd5-074e-41b8-9cb7-ee810cc505fe",
+    "id": "4318abd5-074e-41b8-9cb7-ee810cc505f1",
     "pid": "0",
     "isParent": "true"
   },
   {
-    "name": "食品",
-    "id": "4c51g917-1a91-4025-b527-faa347f77a84",
+    "name": "page1",
+    "id": "4318abd5-074e-41b8-9cb7-ee810cc505f2",
     "pid": "0",
-    "leaf": "true"
+    "isParent": "false",
+    "leaf": true
   },
   {
-    "name": "家具",
-    "id": "4c51d916-1a91-4025-b527-faa347f77a84",
+    "name": "page2",
+    "id": "4318abd5-074e-41b8-9cb7-ee810cc505f3",
     "pid": "0",
-    "leaf": "true"
+    "isParent": "false",
+    "leaf": true
   },
   {
-    "name": "交通",
-    "id": "4c51b333-1a91-4025-b527-faa347f77a84",
+    "name": "page3",
+    "id": "4318abd5-074e-41b8-9cb7-ee810cc505f4",
     "pid": "0",
-    "leaf": "true"
+    "isParent": "false",
+    "leaf": true
   }
 ]
-
