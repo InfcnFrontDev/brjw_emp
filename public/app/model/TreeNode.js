@@ -11,6 +11,6 @@ Ext.define('MyUI.model.TreeNode', {
 			name: 'text',
 			mapping: 'name'
 		},
-		'pid', 'isParent', 'leaf']
+		'pid', 'isParent', 'click', 'iconSkin', 'leaf']
 
 });

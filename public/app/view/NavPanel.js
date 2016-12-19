@@ -9,7 +9,6 @@ Ext.define('MyUI.view.NavPanel', {
 	iconCls: 'iconfont icon-nav',
 
 	useArrows: true,
-	rootVisible : false,
+	rootVisible: false,
 	border: false
-
 });
