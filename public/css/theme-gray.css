@@ -1,0 +1,44 @@
+/*标题栏*/
+#toppanel {
+    background-color: #1ABC9C;
+    border-bottom: 1px solid #BEE1DA;
+}
+
+/*标题栏 logo*/
+#toppanel-logo {
+    color: white;
+    font-size: 26px;
+    line-height: 1.2;
+    margin: 0 12px;
+}
+
+/*标题栏 title*/
+#toppanel-title {
+    color: white;
+    padding: 10px 0 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/*主题选择 label*/
+#themeswitch .x-form-item-label-text {
+    color: #fff;
+}
+
+/*系统菜单*/
+#systemmenu {
+    color: white;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+/*导航栏 图标*/
+#navpanel .x-title-icon {
+    font-size: 20px;
+}
+
+/*内容标签 图标*/
+#mainpanel .x-tab-icon-el {
+    font-size: 14px;
+}
+
