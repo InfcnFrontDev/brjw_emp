@@ -37,3 +37,8 @@
     cursor: pointer;
     margin: 0 15px;
 }
+
+/*导航栏 树的叶子节点图标颜色*/
+#navpanel .x-panel-body .iconfont{
+    color: #000000;
+}
