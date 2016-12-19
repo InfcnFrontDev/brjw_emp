@@ -14,10 +14,19 @@ Ext.define('MyUI.controller.Global', {
 		'NavPanel@MyUI.view',
 		'MainPanel@MyUI.view',
 		'ThemeSwitch@MyUI.view',
-		'SystemMenu@MyUI.view'
+		'SystemMenu@MyUI.view',
+		'IframePanel@MyUI.view'
 	],
 
 	refs: [
+		{
+			ref: 'topPanel',
+			selector: 'toppanel'
+		},
+		{
+			ref: 'navPanel',
+			selector: 'navpanel'
+		},
 		{
 			ref: 'mainPanel',
 			selector: 'mainpanel'
@@ -26,38 +35,54 @@ Ext.define('MyUI.controller.Global', {
 
 	init: function () {
 		this.control({
-			'viewport > navpanel': {
+			'#navpanel': {
 				itemclick: function (tree, record, item, index, e, eOpts) {
 
 					if (record.data.leaf) {
-						this.openPage(record.data)
+						this.openTreePanel(record.data)
 					} else {
 						// 展开节点
 					}
 
 				}
+			},
+			'#personal': {
+				'click': this.personal
+			},
+			'#logout': {
+				'click': this.logout
 			}
 		});
 	},
-
-	openPage: function (data) {
+	openIframePanel: function (data) {
 		var mainPanel = this.getMainPanel();
-
-		console.log(data.name);
-
 		var tab = mainPanel.queryById(data.id);
 		if (!tab) {
-			var url = 'pages/html.html';
-			tab = Ext.create('Ext.Panel', {
-				id: data.id,
-				title: data.name,
-				closable: true,
-				iconCls: 'iconfont icon-page',
-				html: '<iframe src="' + url + '" width="100%" height="100%" frameborder="0"></iframe>'
-			});
+			tab = Ext.create('MyUI.view.IframePanel', data);
 			mainPanel.add(tab);
 		}
 		mainPanel.setActiveItem(tab);
+	},
 
+	openTreePanel: function (data) {
+		this.openIframePanel({
+			id: 'tab-' + data.id,
+			title: data.name,
+			iconCls: 'iconfont icon-page',
+			closable: true,
+			url: 'pages/html.html'
+		});
+	},
+	personal: function () {
+		this.openIframePanel({
+			id: 'tab-personal',
+			title: '个人设置',
+			iconCls: 'iconfont icon-yonghu',
+			closable: true,
+			url: 'pages/personal.html'
+		});
+	},
+	logout: function () {
+		console.log('logout');
 	}
 });

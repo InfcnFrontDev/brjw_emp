@@ -11,20 +11,14 @@ Ext.define('MyUI.view.SystemMenu', {
 		menu = new Ext.menu.Menu({
 			items: [
 				{
-					text: '个人资料',
-					iconCls: 'iconfont icon-yonghu',
-					handler: function () {
-
-
-					}
+					id: 'personal',
+					text: '个人设置',
+					iconCls: 'iconfont icon-yonghu'
 				},
 				{
+					id: 'logout',
 					text: '退出',
-					iconCls: 'iconfont icon-exit',
-					handler: function () {
-
-
-					}
+					iconCls: 'iconfont icon-exit'
 				}
 			]
 		});
