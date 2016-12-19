@@ -1,7 +1,7 @@
 Ext.define('MyUI.view.TopPanel', {
 	extend: 'Ext.Container',
 	xtype: 'toppanel',
-	id: 'app-header',
+	id: 'toppanel',
 	title: '能源管理平台',
 	height: 52,
 	layout: {
@@ -13,13 +13,28 @@ Ext.define('MyUI.view.TopPanel', {
 
 		this.items = [{
 			xtype: 'component',
-			id: 'app-header-logo',
-			cls: ['ext', 'ext-sencha']
+			id: 'toppanel-logo',
+			cls: ['iconfont', 'icon-icon']
 		}, {
 			xtype: 'component',
-			id: 'app-header-title',
+			id: 'toppanel-title',
 			html: this.title,
 			flex: 1
+		}, {
+			xtype: 'container',
+			layout: {
+				type: 'hbox',
+				align: 'middle'
+			},
+			items: [
+				{
+					xtype: 'themeswitch'
+				},
+				{
+					xtype: 'systemmenu',
+					margin: '0 15 0 15'
+				}
+			]
 		}];
 
 		this.callParent();

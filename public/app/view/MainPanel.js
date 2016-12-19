@@ -7,6 +7,8 @@ Ext.define('MyUI.view.MainPanel', {
 		{
 			xtype: 'panel',
 			title: '默认主页',
+			iconCls: 'iconfont icon-home',
+			bodyPadding: 10,
 			html: '默认主页'
 		}
 	]

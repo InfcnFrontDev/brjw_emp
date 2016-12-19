@@ -74,11 +74,11 @@ module.exports = merge(webpackBaseConfig, {
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoErrorsPlugin(),
 		new BrowserSyncWebpackPlugin({
-			host: HOST,
-			port: PORT,
-			//proxy: 'localhost:3000',
-			files: 'public/*',
-			server: { baseDir: [ 'public/' ] }
+			port: 3001,
+			files: 'public/**/*.*',
+			server: {baseDir: ['public/']},
+			open: false,
+			notify: false
 		})
 	]
 });
