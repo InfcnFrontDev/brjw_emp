@@ -33,26 +33,46 @@ Ext.define('MyUI.controller.Global', {
 		}
 	],
 
+	iconClsMaps: {
+		'StagePage': 'icon-zhuzhuangtutubiao',
+		'InputPage': 'icon-edit',
+		'TablePage': 'icon-table',
+		'MapPage': 'icon-map',
+		'RichEditPage': 'icon-edit',
+		'HtmlPage': 'icon-html',
+		'WordPage': 'icon-word',
+		'ExcelPage': 'icon-excel',
+		'SlidePage': 'icon-13',
+		'LayoutPage': 'icon-13',
+		'EnergyBalancePage': 'icon-13'
+	},
+
 	init: function () {
+
+
+
 		this.control({
 			'#navpanel': {
+				beforeitemappend: function (tree, node, eOpts) {
+					if (node.data.leaf) {
+						node.data.iconCls = 'iconfont ' + this.iconClsMaps[node.data.iconSkin];
+					}
+				},
 				itemclick: function (tree, record, item, index, e, eOpts) {
-
 					if (record.data.leaf) {
 						this.openTreePanel(record.data)
-					} else {
-						// 展开节点
 					}
-
 				}
 			},
 			'#personal': {
 				'click': this.personal
-			},
+			}
+			,
 			'#logout': {
 				'click': this.logout
 			}
-		});
+		})
+		;
 	},
 	openIframePanel: function (data) {
 		var mainPanel = this.getMainPanel();
@@ -68,7 +88,7 @@ Ext.define('MyUI.controller.Global', {
 		this.openIframePanel({
 			id: 'tab-' + data.id,
 			title: data.name,
-			iconCls: 'iconfont icon-page',
+			iconCls: 'iconfont ' + this.iconClsMaps[data.iconSkin],
 			closable: true,
 			url: 'pages/html.html'
 		});
