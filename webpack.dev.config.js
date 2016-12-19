@@ -75,7 +75,7 @@ module.exports = merge(webpackBaseConfig, {
 		new webpack.NoErrorsPlugin(),
 		new BrowserSyncWebpackPlugin({
 			port: 3001,
-			files: 'public/**/*.*',
+			files: ["public/**/*.*", "!public/**/*.*__"],
 			server: {baseDir: ['public/']},
 			open: false,
 			notify: false
