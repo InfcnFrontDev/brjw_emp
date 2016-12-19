@@ -7,8 +7,8 @@ Ext.define('MyUI.store.NavTree', {
 
 	proxy: {
 		type: 'ajax',
-		//url: 'http://192.168.1.166/WebServices/MenuService.ashx?statusCode=ExtTree'
-		url: 'data/menu.json'
+		url: 'http://192.168.1.166/WebServices/MenuService.ashx?statusCode=ExtTree'
+		//url: 'data/menu.json'
 	},
 	root: {
 		text: 'Ext JS',
