@@ -18,20 +18,16 @@ Ext.define('MyUI.controller.Global', {
 		'IframePanel@MyUI.view'
 	],
 
-	refs: [
-		{
-			ref: 'topPanel',
-			selector: 'toppanel'
-		},
-		{
-			ref: 'navPanel',
-			selector: 'navpanel'
-		},
-		{
-			ref: 'mainPanel',
-			selector: 'mainpanel'
-		}
-	],
+	refs: [{
+		ref: 'topPanel',
+		selector: 'toppanel'
+	}, {
+		ref: 'navPanel',
+		selector: 'navpanel'
+	}, {
+		ref: 'mainPanel',
+		selector: 'mainpanel'
+	}],
 
 	iconClsMaps: {
 		'StagePage': 'icon-zhuzhuangtutubiao',
@@ -66,13 +62,11 @@ Ext.define('MyUI.controller.Global', {
 			},
 			'#personal': {
 				'click': this.personal
-			}
-			,
+			},
 			'#logout': {
 				'click': this.logout
 			}
-		})
-		;
+		});
 	},
 	openIframePanel: function (data) {
 		var mainPanel = this.getMainPanel();
@@ -90,7 +84,7 @@ Ext.define('MyUI.controller.Global', {
 			title: data.name,
 			iconCls: 'iconfont ' + this.iconClsMaps[data.iconSkin],
 			closable: true,
-			url: 'pages/html.html'
+			url: eval('this.' + data.click)
 		});
 	},
 	personal: function () {
@@ -104,5 +98,15 @@ Ext.define('MyUI.controller.Global', {
 	},
 	logout: function () {
 		console.log('logout');
+	},
+	beforeRedirect: function (url) {
+		// Pages/StageWebPage.aspx?pageid=19508fcc-297a-4cf1-8076-31c2fe3b7379&linkid=7c62e2b2-23ff-4a7e-a8e0-1572f636fee8&title=echarts
+		var urls = url.split('?'),
+			newurl;
+		newurl = urls[0].toLowerCase();
+		newurl = newurl.replace('webpage.aspx', '.html');
+		newurl = newurl + '?' + urls[1];
+		// /pages/stage.html?pageid=19508fcc-297a-4cf1-8076-31c2fe3b7379&linkid=7c62e2b2-23ff-4a7e-a8e0-1572f636fee8&title=echarts
+		return newurl;
 	}
 });
