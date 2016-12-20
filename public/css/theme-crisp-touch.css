@@ -1,7 +1,7 @@
 /*标题栏*/
 #toppanel {
-    background-color: #89BEE5;
-    border-bottom: 1px solid #CAD7E0;
+    background-color: #3B72A8;
+    border-bottom: 1px solid #3B72A8;
 }
 
 /*标题栏 logo*/
@@ -42,17 +42,3 @@
     font-size: 14px;
 }
 
-<<<<<<< HEAD
-=======
-.ks-profile-switcher {
-    color: white;
-    font-size: 21px;
-    cursor: pointer;
-    margin: 0 15px;
-}
-
-/*导航栏 树的叶子节点图标颜色*/
-#navpanel .x-panel-body .iconfont{
-    color: #000000;
-}
->>>>>>> cc80af5bb71408bcddda11fa21b45f1bd6aead45
