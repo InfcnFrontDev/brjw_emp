@@ -6,7 +6,8 @@ var MyUI = MyUI || {};
 
 MyUI.apiPath = 'http://192.168.1.165/';
 
-MyUI.api = {
-	menuTree: MyUI.apiPath + 'WebServices/MenuService.ashx?statusCode=ExtTree'
+MyUI.apiUrl = {
 	// menuTree: 'data/menu.json'
+	menuTree: MyUI.apiPath + 'WebServices/MenuService.ashx?statusCode=ExtTree',
+	pageService: MyUI.apiPath + 'WebServices/PageService.ashx'
 };

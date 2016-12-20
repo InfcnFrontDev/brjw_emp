@@ -7,7 +7,7 @@ Ext.define('MyUI.store.NavTree', {
 
 	proxy: {
 		type: 'ajax',
-		url: MyUI.api.menuTree
+		url: MyUI.apiUrl.menuTree
 	},
 	root: {
 		text: 'Ext JS',
