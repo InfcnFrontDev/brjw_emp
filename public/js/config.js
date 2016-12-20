@@ -11,7 +11,7 @@ MyUI.apiUrl = {
 	pageService: MyUI.apiPath + 'WebServices/PageService.ashx'
 };
 
-MyUI.apiUrl = {
-	menuTree: 'data/MenuService.ashx',
-	pageService: 'data/PageService.ashx'
-};
+// MyUI.apiUrl = {
+// 	menuTree: 'data/MenuService.ashx',
+// 	pageService: 'data/PageService.ashx'
+// };
