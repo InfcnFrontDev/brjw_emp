@@ -46,7 +46,6 @@ Ext.define('MyUI.controller.Global', {
 	init: function () {
 
 
-
 		this.control({
 			'#navpanel': {
 				beforeitemappend: function (tree, node, eOpts) {
@@ -93,7 +92,7 @@ Ext.define('MyUI.controller.Global', {
 			title: '个人设置',
 			iconCls: 'iconfont icon-yonghu',
 			closable: true,
-			url: 'pages/personal.html'
+			url: 'personal.html'
 		});
 	},
 	logout: function () {
@@ -101,12 +100,7 @@ Ext.define('MyUI.controller.Global', {
 	},
 	beforeRedirect: function (url) {
 		// Pages/StageWebPage.aspx?pageid=19508fcc-297a-4cf1-8076-31c2fe3b7379&linkid=7c62e2b2-23ff-4a7e-a8e0-1572f636fee8&title=echarts
-		var urls = url.split('?'),
-			newurl;
-		newurl = urls[0].toLowerCase();
-		newurl = newurl.replace('webpage.aspx', '.html');
-		newurl = newurl + '?' + urls[1];
-		// /pages/stage.html?pageid=19508fcc-297a-4cf1-8076-31c2fe3b7379&linkid=7c62e2b2-23ff-4a7e-a8e0-1572f636fee8&title=echarts
-		return newurl;
+		var urls = url.split('?');
+		return 'main.html' + '?' + urls[1];
 	}
 });

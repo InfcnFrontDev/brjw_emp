@@ -60,7 +60,7 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			filename: 'pages/main.html',
+			filename: 'main.html',
 			template: './src/template.html',
 			inject: true,
 			title: 'main',
