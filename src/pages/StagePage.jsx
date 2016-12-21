@@ -2,27 +2,39 @@ import React from 'react';
 
 import EchartsRole from '../roles/EchartsRole'
 
-export default class StagePage extends React.Component {
+const propTypes = {
+	page: React.PropTypes.object
+};
+
+const defaultProps = {
+	page: null
+};
+
+class StagePage extends React.Component {
 
 	render() {
-		/*console.log(this.props.name)*/
-		console.log(90909090)
-		var Roles=this.props.name.Roles;
-		console.log(this.props.name)
-		let roles=Roles.map(item => {
-			if(item.Actor.ActorType.indexOf('ECharts')){
-				return <EchartsRole chartOption={item.Actor.ChartOption}
-									Bounds={item.Bounds} />
-				
+
+		let roles = this.props.page.Roles.map(role => {
+			if (role.Actor.ActorType.indexOf('ECharts') != '-1') {
+				return <EchartsRole key={role.RoleID} role={role}/>;
+			}else if (role.Actor.ActorType.indexOf('aaaaa') != '-1') {
+				return <EchartsRole key={role.RoleID} role={role}/>;
 			}
+			return <div>No "{role.Actor.ActorType}" matching components</div>
+		});
+
 
 		})
 		
 		return (
 			<div>
-				<p>Hello StagePage!</p>
 				{roles}
 			</div>
 		)
 	}
 }
+
+StagePage.propTypes = propTypes;
+StagePage.defaultProps = defaultProps;
+
+export default StagePage;

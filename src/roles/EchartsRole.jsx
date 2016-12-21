@@ -1,30 +1,36 @@
-'use strict'
-import React, {Component} from 'react'
-import { Button } from 'react-bootstrap';
-import echarts from 'echarts';
 
-class Chart extends Component {
- 	constructor(props) {
-	    super(props);
-	    console.log(this.props.chartOption)
-	    this.state = {
-	    	option: this.props.chartOption,
-	    	Bounds:this.props.Bounds
-	    }
-	}
-	componentWillMount(){
-		 var myChart = echarts.init(document.getElementById('main'));
-        	myChart.setOption(this.state.option);
-	}
-	render() {	
-		 console.log(this.props.chartOption)
+import React from 'react'
+import ECharts from '../components/ECharts'
+
+const propTypes = {
+	role: React.PropTypes.object
+};
+
+const defaultProps = {
+	role: null
+};
+
+class EchartsRole extends React.Component {
+
+	render() {
+		let children = [];
+
+		console.log(this.props.role);
+
 		return (
-			<div >
-				<div id="main"></div>
+			<div>
+				<ECharts
+					option={this.props.role.Actor.ChartOption}
+					notMerge
+					style={{width: 700 + 'px', height: 400 + 'px'}}
+				/>
 			</div>
 			
 		)
 	}
 }
 
-export default Chart;
+EchartsRole.propTypes = propTypes;
+EchartsRole.defaultProps = defaultProps;
+
+export default EchartsRole;
