@@ -4,7 +4,7 @@
 
 var MyUI = MyUI || {};
 
-MyUI.apiPath = 'http://192.168.1.165/';
+MyUI.apiPath = 'http://192.168.1.166/';
 
 MyUI.apiUrl = {
 	// menuTree: 'data/menu.json'
