@@ -35,7 +35,7 @@ export default class App extends React.Component {
 
 			switch (this.state.page.PageType) {
 				case 'StagePage':
-					WebPage = <StagePage/>;
+					WebPage = <StagePage name={this.state.page}/>;
 					break;
 				case 'WordPage':
 					WebPage = <WordPage/>;

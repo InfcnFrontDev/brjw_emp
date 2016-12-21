@@ -3,7 +3,9 @@ import React, {Component} from 'react'
 import { Button } from 'react-bootstrap';
 
 class Chart extends Component {
+
 	render() {
+		console.log(this.props.name.PageType)
 		let children = [];
 
 		children.push(<h2 key="key1">React UI Form demo</h2>);
@@ -15,7 +17,7 @@ class Chart extends Component {
 
 		return (
 			<div>
-				{children}
+				{children}11111111111111111111111
 			</div>
 		)
 	}
