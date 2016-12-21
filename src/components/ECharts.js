@@ -1,6 +1,4 @@
 import React from 'react';
-// import echarts from 'echarts/lib/echarts';
-import echarts from 'echarts';
 
 class ECharts extends React.Component {
 

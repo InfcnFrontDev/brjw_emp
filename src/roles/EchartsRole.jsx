@@ -1,6 +1,4 @@
 import React from 'react'
-import $ from 'jquery';
-import echarts from 'echarts'
 import ECharts from '../components/ECharts'
 
 const propTypes = {

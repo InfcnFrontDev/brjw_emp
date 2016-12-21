@@ -1,5 +1,3 @@
-import $ from 'jquery'
-
 let $ajax = function (url, success, error) {
 	$.ajax({
 		url: url,
