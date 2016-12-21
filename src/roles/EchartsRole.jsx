@@ -1,24 +1,34 @@
-'use strict'
-import React, {Component} from 'react'
-import { Button } from 'react-bootstrap';
+import React from 'react'
+import ECharts from '../components/ECharts'
 
-class Chart extends Component {
+const propTypes = {
+	role: React.PropTypes.object
+};
+
+const defaultProps = {
+	role: null
+};
+
+class EchartsRole extends React.Component {
+
 	render() {
 		let children = [];
 
-		children.push(<h2 key="key1">React UI Form demo</h2>);
-		children.push(<div key="key2">{this.props.children}</div>);
-		if (false)
-			children.push(<div>hello {false ? 'aaaaa' : 'bbbbb'}</div>);
-
-		children.push(<Button key="button">echars</Button>);
+		console.log(this.props.role);
 
 		return (
 			<div>
-				{children}
+				<ECharts
+					option={this.props.role.Actor.ChartOption}
+					notMerge
+					style={{width: 700 + 'px', height: 400 + 'px'}}
+				/>
 			</div>
 		)
 	}
 }
 
-export default Chart;
+EchartsRole.propTypes = propTypes;
+EchartsRole.defaultProps = defaultProps;
+
+export default EchartsRole;
