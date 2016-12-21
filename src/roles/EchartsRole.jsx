@@ -1,15 +1,15 @@
 import React from 'react'
 import ECharts from '../components/ECharts'
 
-const propTypes = {
-	role: React.PropTypes.object
-};
+export default class EchartsRole extends React.Component {
 
-const defaultProps = {
-	role: null
-};
+	static propTypes = {
+		role: React.PropTypes.object
+	};
 
-class EchartsRole extends React.Component {
+	static defaultProps = {
+		role: null
+	};
 
 	render() {
 		let children = [];
@@ -27,8 +27,3 @@ class EchartsRole extends React.Component {
 		)
 	}
 }
-
-EchartsRole.propTypes = propTypes;
-EchartsRole.defaultProps = defaultProps;
-
-export default EchartsRole;
