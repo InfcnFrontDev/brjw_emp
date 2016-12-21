@@ -9,7 +9,7 @@ Ext.define('MyUI.view.MainPanel', {
 			id: 'tab-home',
 			title: '默认主页',
 			iconCls: 'iconfont icon-home',
-			url: 'pages/home.html'
+			url: 'home.html'
 		}
 	]
 

@@ -16,9 +16,9 @@
   "license": "MIT",
   "homepage": "https://github.com/InfcnFrontDev/brjw_emp#readme",
   "dependencies": {
+    "echarts": "^3.3.2",
     "jquery": "^3.1.1",
     "react": "15.4.1",
-    "react-bootstrap": "^0.30.7",
     "react-dom": "15.4.1"
   },
   "devDependencies": {

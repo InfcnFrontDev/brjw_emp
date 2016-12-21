@@ -28,8 +28,9 @@ colors.setTheme({
 
 gulp.task('clean', function () {
 	del([
+		'./public/css/main*.css',
 		'./public/js/main*.js',
-		'./public/pages/main.html'
+		'./public/main.html'
 	]);
 });
 
