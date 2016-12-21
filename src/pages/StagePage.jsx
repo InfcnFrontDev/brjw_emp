@@ -7,16 +7,17 @@ export default class StagePage extends React.Component {
 	render() {
 		/*console.log(this.props.name)*/
 		console.log(90909090)
-		var roles=this.props.name.Roles;
-		console.log(roles)
-		for(let item in roles){
-			
-		}
-		let roles = [];
+		var Roles=this.props.name.Roles;
+		console.log(this.props.name)
+		let roles=Roles.map(item => {
+			if(item.Actor.ActorType.indexOf('ECharts')){
+				return <EchartsRole chartOption={item.Actor.ChartOption}
+									Bounds={item.Bounds} />
+				
+			}
 
-		roles.push(<EchartsRole name={this.props.name}/>);
+		})
 		
-
 		return (
 			<div>
 				<p>Hello StagePage!</p>
