@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class ECharts extends React.Component {
+export default class Canvas extends React.Component {
 
 	static propTypes = {
 		onInit: React.PropTypes.func,
