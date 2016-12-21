@@ -17,7 +17,7 @@ export default class EchartsRole extends React.Component {
 		console.log(this.props.role);
 
 		return (
-			<div>
+			<div className="echarts-role">
 				<ECharts
 					option={this.props.role.Actor.ChartOption}
 					notMerge

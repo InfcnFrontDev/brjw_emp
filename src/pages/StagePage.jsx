@@ -1,10 +1,10 @@
 import React from 'react';
 
 import EchartsRole from '../roles/EchartsRole'
-
-
+import CanvasRoles from '../roles/CanvasRoles'
 
 export default class StagePage extends React.Component {
+
 	static propTypes = {
 		page: React.PropTypes.object
 	};
@@ -12,32 +12,28 @@ export default class StagePage extends React.Component {
 	static defaultProps = {
 		page: null
 	};
+
 	render() {
-		let {
-			style,
-			...other,
-		} = this.props;
+		// ECharts图元
+		let echartsRoles = [], otherRoles = [];
 
-		let style = {
-			width: 1000,
-			height: 600
-		};
-
-
-		let roles = this.props.page.Roles.map(role => {
+		this.props.page.Roles.forEach(role => {
+			// ECharts图元
 			if (role.Actor.ActorType.includes('ECharts')) {
-				return <EchartsRole key={role.RoleID} role={role}/>;
+				echartsRoles.push(<EchartsRole key={role.RoleID} role={role}/>);
+			} else {
+				otherRoles.push(role);
 			}
-			return <div>No "{role.Actor.ActorType}" matching components</div>
 		});
 
 		return (
-			<div ref="page" style={style}>
-				<canvas id="mypage_ctl01" width="1000" height="1500"></canvas>
-				{roles}
+			<div ref="page" className="page stage-page">
+				<CanvasRoles roles={ otherRoles }/>
+				{echartsRoles}
 			</div>
 		)
 	}
+
 }
 
 
