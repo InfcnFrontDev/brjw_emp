@@ -14,8 +14,6 @@ export default class EchartsRole extends React.Component {
 	render() {
 		let children = [];
 
-		console.log(this.props.role);
-
 		return (
 			<div className="echarts-role">
 				<ECharts
