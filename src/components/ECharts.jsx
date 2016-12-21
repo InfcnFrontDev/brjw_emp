@@ -1,5 +1,5 @@
 import React from 'react';
-
+/*import roma from ''*/
 class ECharts extends React.Component {
 
 	static propTypes = {
@@ -51,7 +51,7 @@ class ECharts extends React.Component {
 	}
 
 	init() {
-		this.chart = echarts.init(this.refs.container);
+		this.chart = echarts.init(this.refs.container,'roma');
 		this.setOption();
 	}
 

@@ -20,10 +20,6 @@ export default class StagePage extends React.Component {
 			}
 			return <div>No "{role.Actor.ActorType}" matching components</div>
 		});
-
-
-		})
-		
 		return (
 			<div>
 				{roles}
