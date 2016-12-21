@@ -35,19 +35,19 @@ export default class App extends React.Component {
 
 			switch (this.state.page.PageType) {
 				case 'StagePage':
-					WebPage = <StagePage/>;
+					WebPage = <StagePage page={this.state.page}/>;
 					break;
 				case 'WordPage':
-					WebPage = <WordPage/>;
+					WebPage = <WordPage page={this.state.page}/>;
 					break;
 				case 'ExcelPage':
-					WebPage = <ExcelPage/>;
+					WebPage = <ExcelPage page={this.state.page}/>;
 					break;
 				case 'HtmlPage':
-					WebPage = <HtmlPage/>;
+					WebPage = <HtmlPage page={this.state.page}/>;
 					break;
 				default:
-					WebPage = <HtmlPage/>;
+					WebPage = <HtmlPage page={this.state.page}/>;
 					break;
 			}
 

@@ -17,7 +17,7 @@ module.exports = {
 	module: {
 		loaders: [
 			{
-				test: /\.jsx?$/,
+				test: /\.js[x]?$/,
 				exclude: /(node_modules|bower_components|public\/)/,
 				loader: "babel"
 			},
@@ -66,5 +66,9 @@ module.exports = {
 			title: 'main',
 			chunks: ['main']
 		})
-	]
+	],
+	babel: { //配置babel
+		"presets": ["react", "es2015", 'stage-2'],
+		"plugins": ["transform-runtime"]
+	}
 };
