@@ -7,6 +7,7 @@ import StagePage from './pages/StagePage'
 import WordPage from './pages/WordPage'
 import ExcelPage from './pages/ExcelPage'
 import HtmlPage from './pages/HtmlPage'
+import SlidePage from './pages/SlidePage'
 
 export default class App extends React.Component {
 
@@ -35,7 +36,7 @@ export default class App extends React.Component {
 
 			switch (this.state.page.PageType) {
 				case 'StagePage':
-					WebPage = <StagePage page={this.state.page}/>;
+					WebPage = <SlidePage page={this.state.page}/>;
 					break;
 				case 'WordPage':
 					WebPage = <WordPage page={this.state.page}/>;
