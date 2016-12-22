@@ -7,6 +7,7 @@ import StagePage from './pages/StagePage'
 import WordPage from './pages/WordPage'
 import ExcelPage from './pages/ExcelPage'
 import HtmlPage from './pages/HtmlPage'
+import TablePage from './pages/TablePage'
 
 export default class App extends React.Component {
 
@@ -45,6 +46,9 @@ export default class App extends React.Component {
 					break;
 				case 'HtmlPage':
 					WebPage = <HtmlPage page={this.state.page}/>;
+					break;
+				case 'TablePage':
+					WebPage = <TablePage page={this.state.page}/>;
 					break;
 				default:
 					WebPage = <HtmlPage page={this.state.page}/>;
