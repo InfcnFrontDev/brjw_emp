@@ -2,6 +2,7 @@ import React from 'react';
 
 import EchartsRole from '../roles/EchartsRole'
 import CanvasRoles from '../roles/CanvasRoles'
+import TextRole from '../roles/TextRole'
 
 export default class StagePage extends React.Component {
 
@@ -83,6 +84,10 @@ export default class StagePage extends React.Component {
 		};
 	}
 
+	componentWillMount() {
+		this.initVars();
+	}
+
 	render() {
 		const {
 			echartsActorTypes,
@@ -112,7 +117,7 @@ export default class StagePage extends React.Component {
 				roles.push(<div key={role.RoleID}>webActorTypes: {role.Actor.ActorType}</div>);
 			} else if (textActors.includes(role.Actor.ActorType)) {
 				//生成“FormatLabel”等textActors图元的初始化代码;riseArrow图元需要init参数，在此初始化
-				roles.push(<div key={role.RoleID}>textActors: {role.Actor.ActorType}</div>);
+				roles.push(<TextRole key={role.RoleID} role={role}/>);
 			} else if (inputActorTypes.includes(role.Actor.ActorType)) {
 				//生成“inputActors”图元的初始化代码
 				roles.push(<div key={role.RoleID}>inputActorTypes: {role.Actor.ActorType}</div>);
@@ -124,11 +129,70 @@ export default class StagePage extends React.Component {
 
 		roles.unshift(<CanvasRoles key="canvas-roles" page={page} roles={ canvasRoles }/>);
 
+		let props = {
+			width: page.Size.Width,
+			height: page.Size.Height
+		};
+
 		return (
-			<div ref="page" className="page stage-page">
+			<div ref="page" id="mypage">
+				<canvas id="mypage_canvas" {...props}></canvas>
 				{roles}
 			</div>
 		)
+	}
+
+	componentDidMount() {
+		this.initCanvas();
+	}
+
+	// 初始化 vars
+	initVars() {
+		let {page} = this.props;
+		var dataSets = new Array();
+		var ra = new Array();
+		var opts = new Array();
+		var ca = new Array();
+		var oricanBounds = new Array();
+		var cadivid = new Array();
+		var divchange = new Array();
+		var oriPageBounds = {left: 0, top: 0, width: page.ScaledSize.Width, height: page.ScaledSize.Height};
+		var hmIndex = 0;
+		var excelObj = {};
+		var hmArr = new Array();
+		var exlArr = new Array();
+		var clickObj = new Array();
+		var divboundsArr = new Array();
+		var inputActorArr = new Array();
+		var mypage_canvas = null;
+
+		Object.assign(window, {
+			dataSets,
+			ra,
+			opts,
+			ca,
+			oricanBounds,
+			cadivid,
+			divchange,
+			oriPageBounds,
+			hmIndex,
+			excelObj,
+			hmArr,
+			exlArr,
+			clickObj,
+			divboundsArr,
+			inputActorArr,
+			mypage_canvas
+		});
+	}
+
+	// 初始化 fabric.Canvas
+	initCanvas() {
+		mypage_canvas = new fabric.Canvas('mypage_canvas', {
+			selection: false,
+			allowTouchScrolling: true,
+			renderOnAddRemove: false
+		});
 	}
 
 }
