@@ -1,6 +1,6 @@
 var path = require('path');
+var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var glob = require('glob')
 
 module.exports = {
 	entry: {
@@ -59,6 +59,9 @@ module.exports = {
 		]
 	},
 	plugins: [
+		// new webpack.ProvidePlugin({
+		// 	$: "jquery"
+		// }),
 		new HtmlWebpackPlugin({
 			filename: 'main.html',
 			template: './src/template.html',

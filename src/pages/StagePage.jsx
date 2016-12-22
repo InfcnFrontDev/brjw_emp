@@ -13,21 +13,28 @@ export default class StagePage extends React.Component {
 		page: null
 	};
 
-	render() {
-		console.log('render');
-
-		const echartsActors = [
+	constructor(props) {
+		super(props);
+		this.state = {
+			echartsActorTypes: [
 				"Ems.ECharts.Actor.EChartsBarActor",
 				"Ems.ECharts.Actor.EChartsLineActor",
 				"Ems.ECharts.Actor.EChartsPieActor"
 			],
+			fabricActorTypes: [
+				"StoreCooling.OwmPump1",
+				"StoreCooling.Fan",
+				"StoreCooling.Pipe",
+				"StoreCooling.OwmPump",
+				"StoreCooling.Unit"
+			],
 			// 格式文本和滚动文本
-			textActors = [
+			textActors: [
 				"Ems.StdLib.FormatLabel",
 				"Ems.StdLib.MultilineText"
 			],
 			// 输入图元控件
-			inputActors = [
+			inputActorTypes: [
 				"Ems.DataSourceActor.DSGroupBoxActor",
 				"Ems.DataSourceActor.DSButton",
 				"Ems.DataSourceActor.DSDateTimeActor",
@@ -43,7 +50,7 @@ export default class StagePage extends React.Component {
 				"Ems.StdLib.CheckBox",
 				"StoreCooling.DateTimeActor"
 			],
-			webActors = [
+			webActorTypes: [
 				"Ems.StdLib.SvgActor",
 				"StoreCooling.PictureActor",
 				"Ems.DataSourceActor.DSGroupBoxActor",
@@ -60,16 +67,20 @@ export default class StagePage extends React.Component {
 				"Ems.StdLib.RadioButton",
 				"Ems.StdLib.CheckBox",
 				"StoreCooling.DateTimeActor"
-			],
-			fabricActors = [];
+			]
+		};
+	}
+
+	render() {
+		const {echartsActorTypes, fabricActorTypes} = this.state;
 
 		let roles = [], canvasRoles = [];
 
 		this.props.page.Roles.forEach(role => {
-			if (echartsActors.includes(role.Actor.ActorType)) {
+			if (echartsActorTypes.includes(role.Actor.ActorType)) {
 				// ECharts图元
 				roles.push(<EchartsRole key={role.RoleID} role={role}/>);
-			} else if (fabricActors.includes(role.Actor.ActorType)) {
+			} else if (fabricActorTypes.includes(role.Actor.ActorType)) {
 				// Fabric图元
 				canvasRoles.push(role);
 			} else {

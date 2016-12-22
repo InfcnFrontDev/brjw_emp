@@ -16,6 +16,7 @@
   "license": "MIT",
   "homepage": "https://github.com/InfcnFrontDev/brjw_emp#readme",
   "dependencies": {
+    "loadjs": "^3.2.1",
     "react": "15.4.1",
     "react-dom": "15.4.1"
   },
