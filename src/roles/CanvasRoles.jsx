@@ -102,7 +102,7 @@ export default class CanvasRoles extends React.Component {
 
 	ready() {
 		this.initStagePage();
-		doResize('Manual',false);
+		doResize('Manual', false);
 		this.updatePage();
 		// windowsActions();
 	}
@@ -113,8 +113,10 @@ export default class CanvasRoles extends React.Component {
 
 		roles.forEach(r => {
 			let fn = eval(r.Actor.ActorType);
-			ra.push(new fn(mypage_canvas, r.Bounds.X, r.Bounds.Y, r.Bounds.Width, r.Bounds.Height, r.RotateAngle, r.Flip, r.Center.X, r.Center.Y, r.Actor.Diameter));
+			let actor = new fn(mypage_canvas, r.Bounds.X, r.Bounds.Y, r.Bounds.Width, r.Bounds.Height, r.RotateAngle, r.Flip, r.Center.X, r.Center.Y, r.Actor.Diameter);
+			actor.init({});
 			opts.push({});
+			ra.push(actor);
 		});
 
 		var oriBounds = {};
