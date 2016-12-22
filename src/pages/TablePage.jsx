@@ -14,7 +14,9 @@ export default class TablePage extends React.Component {
 		this.state = {
 
 		}
-  	render() {
+  	
+	}
+	render() {
     return (
 			<div>
 				<p>Hello TablePage!</p>
