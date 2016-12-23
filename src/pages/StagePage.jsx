@@ -2,7 +2,7 @@ import React from 'react';
 import loadjs from 'loadjs'
 
 import ActorFactory from '../common/ActorFactory';
-import ActorTypes from '../common/ActorTypes'
+import PageScript from '../common/PageScript'
 
 export default class StagePage extends React.Component {
 
@@ -170,24 +170,8 @@ export default class StagePage extends React.Component {
 
 	// 加载图元依赖的JS
 	loadJs(callback) {
-		let Page = this.props.page,
-			Roles = Page.Roles,
-			jsArray = new Array();
-
-		Roles.forEach(r => {
-			let actorType = r.Actor.ActorType;
-			if (ActorTypes.echarts.includes(actorType)) {
-				jsArray.push('scripts/EChartsHelper.js');
-			} else if (ActorTypes.gauge.includes(actorType)) {
-				jsArray.push('scripts/BrGauge.js');
-				jsArray.push('scripts/mscorlib.js');
-				jsArray.push('scripts/PerfectWidgets.js');
-				jsArray.push('scripts/pageroles/GaugeBase.js');
-			} else {
-				jsArray.push('scripts/pageroles/' + actorType + '.js');
-			}
-		});
-		loadjs(jsArray, {success: callback});
+		let page = this.props.page;
+		PageScript.loadStagePageJs(page, callback);
 	}
 
 	ready() {
