@@ -37,8 +37,8 @@ let factory = {
 	},
 
 
-	updateCanvasActor(r, canvas){
-
+	updateCanvasActor(r, canvas, i){
+		ra[i].refresh({Visible:true,Enabled:true});
 	},
 
 	initGaugeActor(r, i){
@@ -78,6 +78,14 @@ let factory = {
 		ra[i].setOption(opts[i]);
 		ra[i].refresh({Visable: 'True'});
 		ra[i].setValue(250);
+	},
+
+	initDataSourceActor(r, i){
+
+	},
+
+	updateDataSourceActor(r, i){
+
 	}
 
 };
@@ -90,6 +98,8 @@ export default {
 			factory.initEchartsActor(r, i);
 		} else if (ActorTypes.gauge.includes(actorType)) {
 			factory.initGaugeActor(r, i);
+		} else if (ActorTypes.dataSource.includes(actorType)) {
+			factory.initDataSourceActor(r, i);
 		} else {
 			factory.initCanvasActor(r, canvas, i);
 		}
@@ -101,6 +111,8 @@ export default {
 			factory.updateEchartsActor(r, i);
 		} else if (ActorTypes.gauge.includes(actorType)) {
 			factory.updateGaugeActor(r, i);
+		} else if (ActorTypes.dataSource.includes(actorType)) {
+			factory.updateDataSourceActor(r, i);
 		} else {
 			factory.updateCanvasActor(r, canvas, i);
 		}
