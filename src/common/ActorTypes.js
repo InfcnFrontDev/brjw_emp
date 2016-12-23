@@ -61,6 +61,12 @@ export default {
 	gauge: [
 		"Ems.Client.Charts.CircularGaugeActor",
 		"Ems.Client.Charts.LinearGaugeActor"
+	],
+	dataSource: [
+		"Ems.DataSourceActor.DSButton",
+		"Ems.DataSourceActor.DSComboBox",
+		"Ems.DataSourceActor.DSGroupBoxActor",
+		"Ems.DataSourceActor.DSCheckBox"
 	]
 
 }

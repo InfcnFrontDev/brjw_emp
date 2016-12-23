@@ -1,11 +1,47 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var glob = require('glob')
+
+var entry = {};
+var plugins = [];
+
+function getEntry(globPath) {
+	var files = glob.sync(globPath);
+	var entries = {}, file, dirname, basename, pathname, extname;
+	for (var i = 0; i < files.length; i++) {
+		file = files[i];
+
+		dirname = path.dirname(file);
+		extname = path.extname(file);
+		basename = path.basename(file, extname);
+		pathname = path.join(dirname, basename);
+
+		entries[basename] = file + '/index.jsx';
+	}
+	return entries;
+}
+
+function getHtmlPlugins(entries) {
+	var htmlPlugins = [];
+	for (var key in entries) {
+		htmlPlugins.push(new HtmlWebpackPlugin({
+			filename: 'pages/' + key + '.html',
+			template: './src/pages/' + key + '/template.html',
+			inject: true,
+			title: key,
+			chunks: [key]
+		}));
+	}
+	return htmlPlugins;
+}
+
+entry = getEntry('./src/pages/*');
+plugins = getHtmlPlugins(entry);
+
 
 module.exports = {
-	entry: {
-		'main': ['./src/index.jsx']
-	},
+	entry,
 	output: {
 		publicPath: '/',
 		path: path.join(__dirname, 'public'),
@@ -58,18 +94,7 @@ module.exports = {
 			}
 		]
 	},
-	plugins: [
-		// new webpack.ProvidePlugin({
-		// 	$: "jquery"
-		// }),
-		new HtmlWebpackPlugin({
-			filename: 'main.html',
-			template: './src/template.html',
-			inject: true,
-			title: 'main',
-			chunks: ['main']
-		})
-	],
+	plugins,
 	babel: { //配置babel
 		"presets": ["react", "es2015", 'stage-2'],
 		"plugins": ["transform-runtime"]

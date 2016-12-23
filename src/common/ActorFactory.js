@@ -33,12 +33,11 @@ let factory = {
 		let fn = eval(r.Actor.ActorType);
 		ra.push(new fn(canvas, r.Bounds.X, r.Bounds.Y, r.Bounds.Width, r.Bounds.Height, r.RotateAngle, r.Flip, r.Center.X, r.Center.Y, r.Actor.Diameter));
 		opts.push({});
-		ra[i].init({});
+		ra[i].init(r.InitOption);
 	},
 
-
-	updateCanvasActor(r, canvas){
-
+	updateCanvasActor(r, canvas, i){
+		ra[i].refresh(r.RefreshOption);
 	},
 
 	initGaugeActor(r, i){
@@ -76,20 +75,49 @@ let factory = {
 
 	updateGaugeActor(r, i){
 		ra[i].setOption(opts[i]);
-		ra[i].refresh({Visable: 'True'});
-		ra[i].setValue(250);
-	}
+		ra[i].refresh(r.RefreshOption);
+		ra[i].setValue([]);
+	},
 
+	initDataSourceActor(r, i){
+
+	},
+
+	updateDataSourceActor(r, i){
+
+	},
+
+	initTextActor(r, i){
+		let fn = eval(r.Actor.ActorType);
+		ra.push(new fn({
+			X: r.Bounds.X,
+			Y: r.Bounds.Y,
+			Width: r.Bounds.Width,
+			Height: r.Bounds.Height,
+			RotateAngle: r.RotateAngle,
+			Flip: r.Flip
+		}));
+		opts.push({});
+		ra[i].init(r.InitOption);
+	},
+
+	updateTextActor(r, i){
+		ra[i].refresh(r.RefreshOption);
+	}
 };
 
 export default {
 
 	initActor(r, canvas, i){
 		let actorType = r.Actor.ActorType;
-		if (ActorTypes.echarts.includes(actorType)) {
+		if (ActorTypes.echarts.includes(actorType)) {// echarts
 			factory.initEchartsActor(r, i);
-		} else if (ActorTypes.gauge.includes(actorType)) {
+		} else if (ActorTypes.gauge.includes(actorType)) { // 仪表盘
 			factory.initGaugeActor(r, i);
+		} else if (ActorTypes.dataSource.includes(actorType)) {  // 数据源控件
+			factory.initDataSourceActor(r, i);
+		} else if (ActorTypes.textActors.includes(actorType)) {  // 格式文本和滚动文本
+			factory.initTextActor(r, i);
 		} else {
 			factory.initCanvasActor(r, canvas, i);
 		}
@@ -101,6 +129,10 @@ export default {
 			factory.updateEchartsActor(r, i);
 		} else if (ActorTypes.gauge.includes(actorType)) {
 			factory.updateGaugeActor(r, i);
+		} else if (ActorTypes.dataSource.includes(actorType)) {
+			factory.updateDataSourceActor(r, i);
+		} else if (ActorTypes.textActors.includes(actorType)) {  // 格式文本和滚动文本
+			factory.updateTextActor(r, i);
 		} else {
 			factory.updateCanvasActor(r, canvas, i);
 		}
