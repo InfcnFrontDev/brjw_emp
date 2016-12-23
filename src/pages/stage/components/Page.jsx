@@ -1,91 +1,13 @@
 import React from 'react';
-import loadjs from 'loadjs'
 
-import ActorFactory from '../common/ActorFactory';
-import PageScript from '../common/PageScript'
+import ActorFactory from '../../../common/ActorFactory';
+import PageScript from '../../../common/PageScript'
 
-export default class StagePage extends React.Component {
+export default class Page extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {
-			echartsActorTypes: [
-				"Ems.ECharts.Actor.EChartsBarActor",
-				"Ems.ECharts.Actor.EChartsLineActor",
-				"Ems.ECharts.Actor.EChartsPieActor"
-			],
-			fabricActorTypes: [
-				"StoreCooling.OwmPump1",
-				"StoreCooling.Fan",
-				"StoreCooling.Pipe",
-				"StoreCooling.OwmPump",
-				"StoreCooling.Unit"
-			],
-			// 格式文本和滚动文本
-			textActors: [
-				"Ems.StdLib.FormatLabel",
-				"Ems.StdLib.MultilineText"
-			],
-			// 输入图元控件
-			inputActorTypes: [
-				"Ems.DataSourceActor.DSGroupBoxActor",
-				"Ems.DataSourceActor.DSButton",
-				"Ems.DataSourceActor.DSDateTimeActor",
-				"Ems.DataSourceActor.DSComboBox",
-				"Ems.DataSourceActor.DSListBoxActor",
-				"Ems.DataSourceActor.DSRadioButton",
-				"Ems.DataSourceActor.DSCheckBox",
-				"Ems.StdLib.TextBox",
-				"Ems.StdLib.Button",
-				"Ems.StdLib.NumericUpDown",
-				"Ems.StdLib.ComboBox",
-				"Ems.StdLib.RadioButton",
-				"Ems.StdLib.CheckBox",
-				"StoreCooling.DateTimeActor"
-			],
-			webActorTypes: [
-				"Ems.StdLib.SvgActor",
-				"StoreCooling.PictureActor",
-				"Ems.DataSourceActor.DSGroupBoxActor",
-				"Ems.DataSourceActor.DSButton",
-				"Ems.DataSourceActor.DSDateTimeActor",
-				"Ems.DataSourceActor.DSComboBox",
-				"Ems.DataSourceActor.DSListBoxActor",
-				"Ems.DataSourceActor.DSRadioButton",
-				"Ems.DataSourceActor.DSCheckBox",
-				"Ems.StdLib.TextBox",
-				"Ems.StdLib.Button",
-				"Ems.StdLib.NumericUpDown",
-				"Ems.StdLib.ComboBox",
-				"Ems.StdLib.RadioButton",
-				"Ems.StdLib.CheckBox",
-				"StoreCooling.DateTimeActor"
-			],
-			chartActorTypes: [
-				"Ems.Client.Charts.BarChartActor",
-				"Ems.Client.Charts.LineChartActor",
-				"Ems.Client.Charts.PieChartActor",
-				"Ems.Client.Charts.FunnelChartActor",
-				"Ems.Client.Charts.AreaChartActor",
-				"Ems.Client.Charts.RangeChartActor",
-				"Ems.Client.Charts.RadarChartActor"
-			],
-			gaugeActorTypes: [
-				"Ems.Client.Charts.CircularGaugeActor"
-			],
-			//需要用init()初始化的fabric图元; RiseArrow图元需要init初始化。
-			initFabricActors: [
-				"StoreCooling.RiseArrow",
-				"Ems.Energy.Balance.Lib.LinkLine",
-				"Ems.Energy.Balance.Lib.RectangleActor",
-				"Ems.Energy.Balance.Lib.DiamondActor",
-				"Ems.Energy.Balance.Lib.EllipseActor",
-				"Ems.Energy.Balance.Lib.HexagonActor",
-				"Ems.Energy.Balance.Lib.ParallelogramActor",
-				"Ems.Energy.Balance.Lib.TrapezoidActor",
-				"Ems.Energy.Balance.Lib.TriangleActor"
-			]
-		};
+		this.state = {};
 	}
 
 	// 初始化 vars

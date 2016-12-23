@@ -31,18 +31,16 @@ export default {
 		roles.forEach(r => {
 			let actorType = r.Actor.ActorType;
 			if (ActorTypes.echarts.includes(actorType)) {
-				jsArray.push('scripts/EChartsHelper.js');
+				jsArray.push('../scripts/EChartsHelper.js');
 			} else if (ActorTypes.gauge.includes(actorType)) {
-				jsArray.push('scripts/BrGauge.js');
-				jsArray.push('scripts/mscorlib.js');
-				jsArray.push('scripts/PerfectWidgets.js');
-				jsArray.push('scripts/pageroles/GaugeBase.js');
+				jsArray.push('../scripts/BrGauge.js');
+				jsArray.push('../scripts/mscorlib.js');
+				jsArray.push('../scripts/PerfectWidgets.js');
+				jsArray.push('../scripts/pageroles/GaugeBase.js');
 			} else {
-				jsArray.push('scripts/pageroles/' + actorType + '.js');
+				jsArray.push('../scripts/pageroles/' + actorType + '.js');
 			}
 		});
-
-		console.log(jsArray.array());
 
 		loadjs(jsArray.array(), {success: callback});
 	}
