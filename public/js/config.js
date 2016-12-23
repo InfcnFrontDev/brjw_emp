@@ -13,5 +13,5 @@ MyUI.apiUrl = {
 
 // MyUI.apiUrl = {
 // 	menuTree: 'data/MenuService.ashx',
-// 	pageService: 'data/PageService.ashx'
+// 	pageService: 'data/PageService_yibianpan.ashx'
 // };

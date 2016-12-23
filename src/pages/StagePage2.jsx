@@ -1,10 +1,18 @@
 import React from 'react';
-import loadjs from 'loadjs'
 
-import ActorFactory from '../common/ActorFactory';
-import ActorTypes from '../common/ActorTypes'
+import EchartsRole from '../roles/EchartsRole'
+import CanvasRoles from '../roles/CanvasRoles'
+import TextRole from '../roles/TextRole'
 
 export default class StagePage extends React.Component {
+
+	static propTypes = {
+		page: React.PropTypes.object
+	};
+
+	static defaultProps = {
+		page: null
+	};
 
 	constructor(props) {
 		super(props);
@@ -72,24 +80,74 @@ export default class StagePage extends React.Component {
 			],
 			gaugeActorTypes: [
 				"Ems.Client.Charts.CircularGaugeActor"
-			],
-			//需要用init()初始化的fabric图元; RiseArrow图元需要init初始化。
-			initFabricActors: [
-				"StoreCooling.RiseArrow",
-				"Ems.Energy.Balance.Lib.LinkLine",
-				"Ems.Energy.Balance.Lib.RectangleActor",
-				"Ems.Energy.Balance.Lib.DiamondActor",
-				"Ems.Energy.Balance.Lib.EllipseActor",
-				"Ems.Energy.Balance.Lib.HexagonActor",
-				"Ems.Energy.Balance.Lib.ParallelogramActor",
-				"Ems.Energy.Balance.Lib.TrapezoidActor",
-				"Ems.Energy.Balance.Lib.TriangleActor"
 			]
 		};
 	}
 
-	// 初始化 vars
 	componentWillMount() {
+		this.initVars();
+	}
+
+	render() {
+		const {
+			echartsActorTypes,
+			chartActorTypes,
+			gaugeActorTypes,
+			webActorTypes,
+			textActors,
+			inputActorTypes
+		} = this.state;
+
+		const {page} = this.props;
+
+		let roles = [], canvasRoles = [];
+
+		this.props.page.Roles.forEach(role => {
+			if (echartsActorTypes.includes(role.Actor.ActorType)) {
+				// ECharts控件
+				roles.push(<EchartsRole key={role.RoleID} role={role}/>);
+			} else if (chartActorTypes.includes(role.Actor.ActorType)) {
+				// ChartActorBase
+				roles.push(<div key={role.RoleID}>chartActorTypes: {role.Actor.ActorType}</div>);
+			} else if (gaugeActorTypes.includes(role.Actor.ActorType)) {
+				// GaugeActorBase
+				roles.push(<div key={role.RoleID}>gaugeActorTypes: {role.Actor.ActorType}</div>);
+			} else if (webActorTypes.includes(role.Actor.ActorType)) {
+				// 处理svg、pictures等
+				roles.push(<div key={role.RoleID}>webActorTypes: {role.Actor.ActorType}</div>);
+			} else if (textActors.includes(role.Actor.ActorType)) {
+				//生成“FormatLabel”等textActors图元的初始化代码;riseArrow图元需要init参数，在此初始化
+				roles.push(<TextRole key={role.RoleID} role={role}/>);
+			} else if (inputActorTypes.includes(role.Actor.ActorType)) {
+				//生成“inputActors”图元的初始化代码
+				roles.push(<div key={role.RoleID}>inputActorTypes: {role.Actor.ActorType}</div>);
+			} else {
+				// Fabric图元
+				canvasRoles.push(role);
+			}
+		});
+
+		roles.unshift(<CanvasRoles key="canvas-roles" page={page} roles={ canvasRoles }/>);
+
+		let props = {
+			width: page.Size.Width,
+			height: page.Size.Height
+		};
+
+		return (
+			<div ref="page" id="mypage">
+				<canvas id="mypage_canvas" {...props}></canvas>
+				{roles}
+			</div>
+		)
+	}
+
+	componentDidMount() {
+		this.initCanvas();
+	}
+
+	// 初始化 vars
+	initVars() {
 		let {page} = this.props;
 		var dataSets = new Array();
 		var ra = new Array();
@@ -106,8 +164,7 @@ export default class StagePage extends React.Component {
 		var clickObj = new Array();
 		var divboundsArr = new Array();
 		var inputActorArr = new Array();
-		var pageCanvas = null;
-		var pageId = 'mypage';
+		var mypage_canvas = null;
 
 		Object.assign(window, {
 			dataSets,
@@ -125,131 +182,18 @@ export default class StagePage extends React.Component {
 			clickObj,
 			divboundsArr,
 			inputActorArr,
-			pageCanvas,
-			pageId
-		});
-
-	}
-
-	render() {
-		let {page} = this.props;
-
-		let page_props = {},
-			canvas_props = {
-				width: page.Size.Width,
-				height: page.Size.Height
-			};
-
-		return (
-			<div id="mypage" {...page_props}>
-				<canvas id="pageCanvas" {...canvas_props}></canvas>
-			</div>
-		)
-	}
-
-	componentDidMount() {
-		let me = this;
-
-		this.initCanvas();
-		this.loadJs(function () {
-			me.ready();
+			mypage_canvas
 		});
 	}
-
 
 	// 初始化 fabric.Canvas
 	initCanvas() {
-		let me = this;
-
-		pageCanvas = new fabric.Canvas('pageCanvas', {
+		mypage_canvas = new fabric.Canvas('mypage_canvas', {
 			selection: false,
 			allowTouchScrolling: true,
 			renderOnAddRemove: false
 		});
 	}
-
-	// 加载图元依赖的JS
-	loadJs(callback) {
-		let Page = this.props.page,
-			Roles = Page.Roles,
-			jsArray = new Array();
-
-		Roles.forEach(r => {
-			let actorType = r.Actor.ActorType;
-			if (ActorTypes.echarts.includes(actorType)) {
-				jsArray.push('scripts/EChartsHelper.js');
-			} else if (ActorTypes.gauge.includes(actorType)) {
-				jsArray.push('scripts/BrGauge.js');
-				jsArray.push('scripts/mscorlib.js');
-				jsArray.push('scripts/PerfectWidgets.js');
-				jsArray.push('scripts/pageroles/GaugeBase.js');
-			} else {
-				jsArray.push('scripts/pageroles/' + actorType + '.js');
-			}
-		});
-		loadjs(jsArray, {success: callback});
-	}
-
-	ready() {
-		this.initStagePage();
-		doResize('Manual', false);
-		this.updatePage();
-		this.windowsActions();
-	}
-
-
-	initStagePage() {
-		let Page = this.props.page,
-			Roles = Page.Roles
-
-		Roles.forEach((r, i) => {
-			ActorFactory.initActor(r, pageCanvas, i);
-		});
-
-		var oriBounds = {};
-		oriBounds.width = getoriCanvasSize(pageCanvas).width;
-		oriBounds.height = getoriCanvasSize(pageCanvas).height;
-		oriBounds.left = 0;
-		oriBounds.top = 0;
-		oricanBounds.push(oriBounds);
-		ca.push(pageCanvas);
-		cadivid.push('pageCanvas');
-
-		pageCanvas.renderAll();
-
-	}
-
-	updateStagePage() {
-		let Page = this.props.page,
-			Roles = Page.Roles
-
-		hmIndex = 0;
-		Roles.forEach((r, i) => {
-			ActorFactory.updateActor(r, pageCanvas, i);
-		});
-
-		pageCanvas.renderAll();
-	}
-
-	timerefresh() {
-	}
-
-
-	getFrameTiming() {
-	}
-
-	updatePage() {
-		this.updateStagePage();
-	}
-
-	windowsActions() {
-		// parent.window.onresize = function () {
-		// 	resizeTimer = setTimeout(doResize('Manual', false), 500);
-		// };
-		// document.onclick = doClick;
-		// document.onmousemove = doMousemove;
-		// setInterval(timerefresh, getFrameTiming());
-	};
 
 }
 
