@@ -6,31 +6,53 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
 
 	<title>能源管理平台</title>
+	<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/login.css">
 	<script src="js/login.js"></script>
 </head>
 <body>
 	<div class="login-box">
-		<div class="box-center">
-			<p>能源系统登录</p>
-			<form action="">
-				<ul>
-					<li>
-						<label for="email">邮箱:</label>
-						<input id="email" class="box-input" type="text">
-					</li>
-					<li>
-						<label for="name">姓名:</label>
-						<input id="name" class="box-input" type="text">
-					</li>
-					
-					<li>
-						<span class="denglu left">登录</span>
-						<span class="chongzhi right">重置</span>
-					</li>
-				</ul>
-			</form>
-		</div>
+		
+  	<div class="login-logo">
+    能源管理平台
+  	</div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg">Sign in to start your session</p>
+
+    <form action="" method="post">
+      <div class="form-group has-feedback">
+        <input type="email" class="form-control" placeholder="Email">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" placeholder="Password">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="line"></div>
+      <div class="row">
+        <div class="col-xs-6">
+           <button type="submit" class="btn-c btn-chongzhi">重置</button>
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-6">
+          <button type="submit" class="btn-c btn-denglu">登录</button>
+        </div>
+        <!-- /.col -->
+      </div>
+    </form>
+
+    <div class="kehuduan text-center">
+     
+      <a href="#" class="">下载客户端</a>
+    </div>
+   
+
+   
+
+  <!-- /.login-box-body -->
+</div>
+		
 	</div>
 </body>
 </html>

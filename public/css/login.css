@@ -1,83 +1,124 @@
-*{
-	margin: 0;
-	padding: 0;
-	font-family: 'Microsoft YaHei';
-}
-li{
-	list-style: none;
-}
-input{
-	outline: none;
-	border: none;
-	
-}
-body{
-	background: #14A084;
-}
-.login-box{
-	padding-top:50px;
-	text-align: center;
-	width:300px;
-	height:300px;
-	background: transparent;
-	-moz-box-shadow:0px 0px 20px #0A7560; 
-	-webkit-box-shadow:0px 0px 20px #0A7560; 
-	box-shadow:0px 0px 20px #0A7560;
-	position: absolute;
-	top:0;
-	left:0;
-	bottom:0;
-	right:0;
-	margin: auto;
-	border-radius: 5px;
-}
-p{
-	text-align: center;
-	color: #4AC9B3;
-	font-family: 'Microsoft YaHei';
-	font-size: 20px;
-	padding-bottom: 50px;
-	
-}
-.box-input{
-	
-	background: #5CBCA8;
-	width:190px;
-	height:30px;
-	border-radius: 5px;
-	float: right;
+html {
+    font-family: sans-serif;
 }
 
-ul{
-	width:274px;
-	text-align: center;
+body{
+    background: #d2d6de;
 }
-li{
-	overflow: hidden;
+.login-box, .register-box {
+    width: 360px;
+    margin: 7% auto;
 }
-li+li{
-	
-	margin-top: 12px;
+.login-logo, .register-logo {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 300;
 }
-label{
-	color: #05725E;
-	
+.login-box-body, .register-box-body {
+    background: #fff;
+    padding: 20px;
+    border-top: 0;
+    color: #666;
 }
-.denglu,.chongzhi{
-	display: inline-block;
-	width:60px;
-	height:30px;
-	background: #048C74;
-	text-align: center;
-	color: #fff;
-	line-height: 30px;
+.login-box-msg, .register-box-msg {
+    margin: 0;
+    text-align: center;
+    padding: 0 20px 20px 20px;
 }
-.denglu{
-	margin-left: 84px;
+form {
+    display: block;
+    margin-top: 0em;
 }
-.left{
-	float:left;
+.login-box-body, .register-box-body {
+    background: #fff;
+    padding: 20px;
+    border-top: 0;
+    color: #666;
 }
-.right{
-	float:right;
+.has-feedback {
+    position: relative;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.has-feedback .form-control {
+    padding-right: 42.5px;
+}
+
+.form-control:not(select) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.form-control {
+    border-radius: 0;
+    box-shadow: none;
+    border-color: #d2d6de;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    }
+
+.form-control-feedback {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    pointer-events: none;
+}
+
+.line{
+	border-top:1px dotted #666;
+	margin:30px auto;
+	width:100%;
+	height:1px;  
+}
+
+
+
+.btn-denglu {
+    background-color: #3c8dbc;
+    border-color: #367fa9;
+    color:white;
+}
+.btn-chongzhi{
+	background: #dd4b39;
+	 color:white;
+
+}
+
+
+.btn-c {
+	 border: 1px solid transparent;
+	 border-radius: 3px;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    color: #fff !import;
+     width: 90%;
+      display: block;
+}
+.kehuduan{
+	margin-top: 20px;
 }
