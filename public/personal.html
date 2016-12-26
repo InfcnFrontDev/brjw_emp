@@ -1,12 +1,338 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title></title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
 
+</title>
+	<link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="plugins/Styles/formValidation.min.css" rel="stylesheet" />
+
+	<script type="text/javascript" src="plugins/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="plugins/bootstrap/js/bootstrap.min.js"></script>
+
+	<script src="scripts/formValidation.min.js"></script>
+	<script src="scripts/Framework.Bootstrap.js"></script>
 </head>
 <body>
-personal.html
+<form method="post" action="./UserSetting.aspx?title=%u4e2a%u4eba%u8bbe%u7f6e&amp;pageid=usermanager" id="form1" class="form-horizontal">
+	<div class="aspNetHidden">
+		<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTY3NzQzMTM4MWRklj7JMLNGRUMc5sJVN5sL0u0iTExVjd1Vjy4fOEEgkGk=" />
+	</div>
+
+	<div class="aspNetHidden">
+
+		<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A8DC180B" />
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<h2 style="text-align: center">用户基本信息</h2>
+				<br />
+			</div>
+			<div class="col-xs-4">
+
+				<label class="col-sm-5 control-label ">用户名：</label>
+				<div class="col-sm-4">
+					<label class="control-label ">张三丰</label>
+				</div>
+				<div class="col-sm-3">
+					<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#changePassModal">
+						修改密码
+					</button>
+				</div>
+				<label class="col-sm-5 control-label ">用户邮箱：</label>
+				<div class="col-sm-7">
+					<label class="control-label ">zhangsanfeng@qqqq.com</label>
+				</div>
+				<label class="col-sm-5 control-label ">手机号：</label>
+				<div class="col-sm-7">
+					<label class="control-label ">11111111111</label>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<label class="col-sm-5 control-label ">所属单位：</label>
+				<div class="col-sm-7">
+					<label class="control-label ">铜川市</label>
+				</div>
+				<label class="col-sm-5 control-label "></label>
+				<div class="col-sm-7">
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div>
+					<img id="Image1" src="../images/defaultPhoto.gif" src="" />
+				</div>
+
+			</div>
+
+			<div class="col-xs-12">s</div>
+			<div class="col-xs-12">s</div>
+			<div class="col-xs-12">s</div>
+			<div class="col-xs-12">s</div>
+			<div class="col-xs-12">s</div>
+
+			<div class="col-xs-12">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">Panel title</h3>
+					</div>
+					<div class="panel-body">
+						Panel content
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+	</div>
+</form>
+<!-- Modal -->
+<div class="modal fade" id="changePassModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+
+		<div class="modal-content">
+			<form class="form-horizontal" id="cpform" method="post" action="">
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">修改密码</h4>
+				</div>
+
+				<div class="modal-body">
+					<div class="form-group left">
+						<label for="firstname" class="col-sm-2 control-label">旧密码</label>
+						<div class="col-sm-10">
+							<input name="oldpassword" type="text" id="oldpassword" class="form-control input-sm" style="width: 50%" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="lastname" class="col-sm-2 control-label">新密码</label>
+						<div class="col-sm-10">
+							<input name="newpassword" type="text" id="newpassword" class="form-control input-sm" style="width: 50%" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="lastname" class="col-sm-2 control-label">确认密码</label>
+						<div class="col-sm-10">
+							<input name="confirmpass" type="text" id="confirmpass" class="form-control input-sm" style="width: 50%" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="lastname" class="col-sm-12 control-label"></label>
+
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="submit" class="btn btn-primary">保存</button>
+				</div>
+
+			</form>
+		</div>
+	</div>
+</div>
+jQuery UI 教程
+jQuery UI 教程
+jQuery UI 简介
+jQuery UI 下载
+jQuery UI 使用
+jQuery UI 定制
+jQuery UI 工作原理
+
+jQuery UI 主题
+jQuery UI 主题
+jQuery UI ThemeRoller
+jQuery UI CSS 框架 API
+jQuery UI 设计主题
+
+jQuery UI 部件库
+jQuery UI 部件库
+jQuery UI 扩展小部件
+jQuery UI 小部件方法调用
+jQuery UI 为什么使用部件库
+jQuery UI 如何使用部件库
+
+jQuery UI 参考手册
+jQuery UI API 文档
+API 类别 - 特效
+API 类别 - 特效核心
+API 类别 - 交互
+API 类别 - 方法重载
+API 类别 - 方法
+API 类别 - 选择器
+API 类别 - 主题
+API 类别 - UI 核心
+API 类别 - 实用工具
+API 类别 - 小部件
+
+jQuery UI 实例
+jQuery UI 实例
+拖动（Draggable）
+放置（Droppable）
+缩放（Resizable）
+选择（Selectable）
+排序（Sortable）
+折叠面板（Accordion）
+自动完成（Autocomplete）
+按钮（Button）
+日期选择器（Datepicker）
+对话框（Dialog）
+菜单（Menu）
+进度条（Progressbar）
+滑块（Slider）
+旋转器（Spinner）
+标签页（Tabs）
+工具提示框（Tooltip）
+特效（Effect）
+显示（Show）
+隐藏（Hide）
+切换（Toggle）
+.addClass()
+.removeClass()
+.toggleClass()
+.switchClass()
+颜色动画
+定位（Position）
+部件库（Widget Factory）
+← jQuery UI 实例 – 日期选择器（Datepicker） jQuery UI 实例 – 菜单（Menu） →
+jQuery UI 实例 - 对话框（Dialog）
+在一个交互覆盖层中打开内容。
+如需了解更多有关 dialog 部件的细节，请查看 API 文档 对话框部件（Dialog Widget）。
+默认功能
+基本的对话框窗口是一个定位于视区中的覆盖层，同时通过一个 iframe 与页面内容分隔开（就像 select 元素）。它由一个标题栏和一个内容区域组成，且可以移动，调整尺寸，默认可通过 'x' 图标关闭。
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery UI 对话框（Dialog） - 默认功能</title>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+	<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+	<script>
+		$(function() {
+			$( "#dialog" ).dialog();
+		});
+	</script>
+</head>
+<body>
+
+<div id="dialog" title="基本的对话框">
+	<p>这是一个默认的对话框，用于显示信息。对话框窗口可以移动，调整尺寸，默认可通过 'x' 图标关闭。</p>
+</div>
+
+
+</body>
+</html>
+查看演示
+动画
+可以通过为 show/hide 属性指定一个特效来动画显示对话框。您必须为想使用的特效引用独立的特效文件。
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery UI 对话框（Dialog） - 动画</title>
+	<link rel="stylesheet" href="plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
+
+	<script src="plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+	<link rel="stylesheet" href="plugins/Styles/style.css">
+	<script>
+		$(function() {
+			$( "#dialog" ).dialog({
+				autoOpen: false,
+				show: {
+					effect: "blind",
+					duration: 1000
+				},
+				hide: {
+					effect: "explode",
+					duration: 1000
+				}
+			});
+
+			$( "#opener" ).click(function() {
+				$( "#dialog" ).dialog( "open" );
+			});
+		});
+	</script>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$('#changePassModal').on('hidden.bs.modal', function () {
+			$('#cpform').formValidation('resetForm', true);
+		});
+		$('#cpform').formValidation({
+			framework: 'bootstrap',
+			excluded: ':disabled',
+			fields: {
+				oldpassword: {
+					message: '请输入密码',
+					validators: {
+						notEmpty: {
+							message: '请输入密码'
+						},
+						stringLength: {
+							min: 6,
+							max: 20,
+							message: '密码长度不正确，应为6～20个字符'
+						}
+					}
+				},
+				newpassword: {
+					message: '请输入密码',
+					validators: {
+						notEmpty: {
+							message: '密码长度不正确，应为6～20个字符'
+						},
+						stringLength: {
+							min: 6,
+							max: 20,
+							message: '密码长度不正确，应为6～20个字符'
+						}
+					}
+				},
+				confirmpass: {
+					message: '请输入密码',
+					validators: {
+						notEmpty: {
+							message: '密码长度不正确，应为6～20个字符'
+						},
+						stringLength: {
+							min: 6,
+							max: 20,
+							message: '密码长度不正确，应为6～20个字符'
+						},
+						identical: {
+							field: 'newpassword',
+							message: '输入的密码不匹配'
+						}
+					}
+				},
+			}
+
+		})
+			.on('success.form.fv', function (e) {
+				// Prevent form submission
+				e.preventDefault();
+
+				var $form = $(e.target),
+					fv = $form.data('formValidation');
+				// Use Ajax to submit form data
+				$.ajax({
+					url: $form.attr('action'),
+					type: 'POST',
+					data: $form.serialize(),
+					success: function (result) {
+
+					}
+				});
+			});
+	});
+
+</script>
 </body>
 </html>
