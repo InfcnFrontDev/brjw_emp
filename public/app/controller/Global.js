@@ -40,7 +40,8 @@ Ext.define('MyUI.controller.Global', {
 		'ExcelPage': 'icon-excel',
 		'SlidePage': 'icon-13',
 		'LayoutPage': 'icon-13',
-		'EnergyBalancePage': 'icon-13'
+		'EnergyBalancePage': 'icon-13',
+		'HeatMapPage': 'icon-iconfontrelitu'
 	},
 
 	init: function () {
