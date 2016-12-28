@@ -63,10 +63,13 @@ export default {
 		"Ems.Client.Charts.LinearGaugeActor"
 	],
 	dataSource: [
-		"Ems.DataSourceActor.DSButton",
+		"Ems.DataSourceActor.DSListBoxActor",
 		"Ems.DataSourceActor.DSComboBox",
+		"Ems.DataSourceActor.DSButton",
 		"Ems.DataSourceActor.DSGroupBoxActor",
-		"Ems.DataSourceActor.DSCheckBox"
+		"Ems.DataSourceActor.DSCheckBox",
+		"Ems.DataSourceActor.DSRadioButton",
+		"Ems.DataSourceActor.DSDateTimeActor"
 	]
 
 }
