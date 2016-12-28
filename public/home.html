@@ -14,21 +14,6 @@
 		{
 			text-align: center;
 		}
-		.chartArea
-		{
-			border: 1px solid #909090;
-			width: 525px;
-			height: 320px;
-			margin-bottom: 5px;
-		}
-		.col-xs-4
-		{
-			padding-left: 0px;
-			padding-right: 0px;
-		}
-		div{
-			display:block;
-		}
 		.container
 		{
 			width: 100%;
@@ -41,7 +26,46 @@
 		{
 			margin-left: 5px;
 			margin-right: 5px;
+
 		}
+
+		@media screen and (max-width: 1144px){
+			.chartArea
+			{
+				border: 1px solid #909090;
+				width: 525px;
+				height: 320px;
+				margin-bottom: 5px;
+				display:block;
+				margin-right:auto;
+				margin-left:auto
+			}
+		}
+		@media screen and (min-width: 1144px){
+			.chartArea
+			{
+				border: 1px solid #909090;
+				width: 525px;
+				height: 320px;
+				margin-bottom: 5px;
+				float:left;
+				margin-left:10px;
+			}
+			.right{
+				float:right;
+				margin-right:10px;
+			}
+		}
+		@media screen and (min-width: 1198px){
+			.chartArea{
+				margin-left:30px;
+			}
+			.right{
+				margin-right:30px;
+			}
+		}
+
+
 	</style>
 	<script type="text/javascript">
 
@@ -59,6 +83,9 @@
 		for (var i = 1; i <= 9; i++) {
 			loadDefChart(i);
 		}
+		window.onresize = function(){
+			console.log(document.body.offsetWidth);
+		}
 	</script>
 </head>
 <body>
@@ -69,43 +96,41 @@
 		<hr style="width: 90%; border-top: 3px solid red;" />
 	</div>
 	<div class="container">
-		<div class="row show-grid">
-			<div class="col-lg-4 col-md-6 col-sm-12">
-				<div class="center-block">
-					<div class="chartArea center-block" id="chart1">
+		<div class="row ">
+			<div>
+					<div class="chartArea " id="chart1">
 					</div>
+			</div>
+			<div>
+				<div class="chartArea right" id="chart2">
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-6 col-sm-12">
-				<div class="chartArea center-block" id="chart2">
+			<div>
+				<div class="chartArea" id="chart3">
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-6 col-sm-12">
-				<div class="chartArea center-block" id="chart3">
+			<div>
+				<div class="chartArea right" id="chart4">
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-6 col-sm-12">
-				<div class="chartArea center-block" id="chart4">
+			<div>
+				<div class="chartArea " id="chart5">
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-6 col-sm-12">
-				<div class="chartArea center-block" id="chart5">
+			<div>
+				<div class="chartArea right" id="chart6">
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-6 col-sm-12">
-				<div class="chartArea center-block" id="chart6">
+			<div>
+				<div class="chartArea " id="chart7">
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-6 col-sm-12">
-				<div class="chartArea center-block" id="chart7">
+			<div>
+				<div class="chartArea right" id="chart8">
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-6 col-sm-12">
-				<div class="chartArea center-block" id="chart8">
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-6 col-sm-12">
-				<div class="chartArea center-block" id="chart9">
+			<div>
+				<div class="chartArea " id="chart9">
 				</div>
 			</div>
 		</div>
