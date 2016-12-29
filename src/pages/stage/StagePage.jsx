@@ -10,6 +10,7 @@ export default class StagePage extends React.Component {
 		this.state = {};
 	}
 
+
 	// 初始化 vars
 	componentWillMount() {
 		let {page} = this.props;
