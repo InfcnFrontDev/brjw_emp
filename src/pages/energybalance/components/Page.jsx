@@ -21,7 +21,7 @@ export default class Page extends React.Component {
 			'background':'url(../images/954586bb-bb08-4b8b-bb96-ae82e83f8fa0.png)'
 			 
 		};
-		let canvas_props={};
+		let canvas_style={};
 		canvas_style = {
 				width: page.Size.Width,
 				height: page.Size.Height
