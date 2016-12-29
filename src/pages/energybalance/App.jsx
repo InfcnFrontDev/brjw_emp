@@ -1,7 +1,7 @@
 import React from 'react'
 
 import BaseApp from '../../components/BaseApp'
-import Page from './components/Page'
+import EnergyBalancePage from './EnergyBalancePage'
 
 export default class App extends BaseApp {
 
@@ -13,7 +13,7 @@ export default class App extends BaseApp {
 		let WebPage = null,
 			{page} = this.state;
 		if (page) {
-			WebPage = <Page page={page}/>;
+			WebPage = <EnergyBalancePage page={page}/>;
 		} else {
 			WebPage = <div>Loading...</div>
 		}
