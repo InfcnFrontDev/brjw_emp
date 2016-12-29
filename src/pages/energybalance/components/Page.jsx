@@ -21,10 +21,17 @@ export default class Page extends React.Component {
 			'background':'url(../images/954586bb-bb08-4b8b-bb96-ae82e83f8fa0.png)'
 			 
 		};
-			
+		let canvas_props={};
+		canvas_style = {
+				width: page.Size.Width,
+				height: page.Size.Height
+			};
+		let height =page.Size.Height;
+		let width =	page.Size.Width;
+		console.log(width,height)
 		return (
 			<div id="mypage_ctl00" style={style}>
-				<canvas id="Canvas" ></canvas>
+				<canvas id="canvas" {...canvas_style}></canvas>
 			</div>
 			
 		)
@@ -38,7 +45,7 @@ export default class Page extends React.Component {
 	initPage() {
 		let me = this;
 
-		var Canvas = new fabric.Canvas('Canvas', {
+		var Canvas = new fabric.Canvas('canvas', {
 			selection: false,
 			allowTouchScrolling: true,
 			renderOnAddRemove: false
