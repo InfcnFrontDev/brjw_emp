@@ -1,7 +1,7 @@
 import React from 'react'
 
 import BaseApp from '../../components/BaseApp'
-import Page from './components/Page'
+import StagePage from './StagePage'
 
 export default class App extends BaseApp {
 
@@ -14,7 +14,7 @@ export default class App extends BaseApp {
 			{page} = this.state;
 
 		if (page) {
-			WebPage = <Page page={page}/>;
+			WebPage = <StagePage page={page}/>;
 		} else {
 			WebPage = <div>Loading...</div>
 		}

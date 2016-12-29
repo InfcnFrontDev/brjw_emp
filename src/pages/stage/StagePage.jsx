@@ -1,14 +1,15 @@
 import React from 'react';
 
-import ActorFactory from '../../../common/ActorFactory';
-import PageScript from '../../../common/PageScript'
+import ActorFactory from '../../common/ActorFactory';
+import PageScript from '../../common/PageScript'
 
-export default class Page extends React.Component {
+export default class StagePage extends React.Component {
 
 	constructor(props) {
 		super(props);
 		this.state = {};
 	}
+
 
 	// 初始化 vars
 	componentWillMount() {
