@@ -80,11 +80,22 @@ let factory = {
 	},
 
 	initDataSourceActor(r, i){
-
+		let fn = eval(r.Actor.ActorType);
+		ra.push(new fn({
+			X: r.Bounds.X,
+			Y: r.Bounds.Y,
+			Width: r.Bounds.Width,
+			Height: r.Bounds.Height,
+			RotateAngle: r.RotateAngle,
+			Flip: r.Flip
+		}));
+		opts.push({});
+		console.log(r.InitOption);
+		ra[i].init(r.InitOption);
 	},
 
 	updateDataSourceActor(r, i){
-
+		ra[i].refresh(r.RefreshOption);
 	},
 
 	initTextActor(r, i){
@@ -103,6 +114,24 @@ let factory = {
 
 	updateTextActor(r, i){
 		ra[i].refresh(r.RefreshOption);
+	},
+
+	initWebActor(r, i){
+		let fn = eval(r.Actor.ActorType);
+		ra.push(new fn({
+			X: r.Bounds.X,
+			Y: r.Bounds.Y,
+			Width: r.Bounds.Width,
+			Height: r.Bounds.Height,
+			RotateAngle: r.RotateAngle,
+			Flip: r.Flip,
+			PicturePath: r.Actor.PicturePath
+		}));
+		opts.push({});
+	},
+
+	updateWebActor(r, i){
+		ra[i].refresh(r.RefreshOption);
 	}
 };
 
@@ -118,6 +147,8 @@ export default {
 			factory.initDataSourceActor(r, i);
 		} else if (ActorTypes.textActors.includes(actorType)) {  // 格式文本和滚动文本
 			factory.initTextActor(r, i);
+		} else if (ActorTypes.web.includes(actorType)) {  //处理svg、pictures等
+			factory.initWebActor(r, i);
 		} else {
 			factory.initCanvasActor(r, canvas, i);
 		}
@@ -133,6 +164,8 @@ export default {
 			factory.updateDataSourceActor(r, i);
 		} else if (ActorTypes.textActors.includes(actorType)) {  // 格式文本和滚动文本
 			factory.updateTextActor(r, i);
+		} else if (ActorTypes.web.includes(actorType)) {  //处理svg、pictures等
+			factory.updateWebActor(r, i);
 		} else {
 			factory.updateCanvasActor(r, canvas, i);
 		}

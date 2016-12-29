@@ -109,6 +109,7 @@ export default class Page extends React.Component {
 			Roles = Page.Roles
 
 		Roles.forEach((r, i) => {
+			console.log(r.Actor.ActorType);
 			ActorFactory.initActor(r, pageCanvas, i);
 		});
 
@@ -122,7 +123,6 @@ export default class Page extends React.Component {
 		cadivid.push('pageCanvas');
 
 		pageCanvas.renderAll();
-
 	}
 
 	updateStagePage() {
