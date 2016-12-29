@@ -14,6 +14,9 @@ export default class App extends React.Component {
 		let me = this,
 			params = Tools.getParams();
 
+		if (params.title)
+			document.title = params.title;
+
 		// 取页面配置JSON
 		WebServices.getPageService(params.pageid, params.linkid, params.title).then(function (result) {
 			me.setState({page: result});
