@@ -1,7 +1,7 @@
 import React from 'react'
 
 import BaseApp from '../../components/BaseApp'
-import Page from './components/Page'
+import Page from './StagePage'
 
 export default class App extends BaseApp {
 
