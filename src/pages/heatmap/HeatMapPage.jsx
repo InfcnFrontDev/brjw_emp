@@ -1,11 +1,10 @@
 import React from 'react';
-import Echarts from  'echarts'
 export default class HeatMapPage extends React.Component {
 
 	constructor(props) {
 		super(props);
 		this.state = {
-			
+
 		}
 	}
 
