@@ -61,7 +61,7 @@ export default class Page extends React.Component {
 				width: page.Size.Width,
 				height: page.Size.Height
 			};
-
+			
 		return (
 			<div id="mypage" {...page_props}>
 				<canvas id="pageCanvas" {...canvas_props}></canvas>
