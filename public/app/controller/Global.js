@@ -36,11 +36,12 @@ Ext.define('MyUI.controller.Global', {
 		'MapPage': 'icon-map',
 		'RichEditPage': 'icon-edit',
 		'HtmlPage': 'icon-html',
-		'WordPage': 'icon-word',
+		'RichEditPage': 'icon-word',
 		'ExcelPage': 'icon-excel',
 		'SlidePage': 'icon-13',
 		'LayoutPage': 'icon-13',
-		'EnergyBalancePage': 'icon-13'
+		'EnergyBalancePage': 'icon-13',
+		'HeatMapPage': 'icon-iconfontrelitu'
 	},
 
 	init: function () {
