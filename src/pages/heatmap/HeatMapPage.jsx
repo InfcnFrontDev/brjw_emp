@@ -4,7 +4,7 @@ export default class HeatMapPage extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			
+
 		}
 	}
 
