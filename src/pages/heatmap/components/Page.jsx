@@ -31,12 +31,10 @@ export default class Page extends React.Component {
 	}
 
 	initPage() {
-		
 		let {page} = this.props;
 		var myChart=Echarts.init(document.getElementById('mypage_ctl00'));
 		 	Echarts.registerMap('beijing', page.JsonData);
-		
-	   	var m=BuildChartOption('heatmap',{ 'file': page.JsonData, 'name': page.JsonData});
-	   myChart.setOption(m)
+	   	var m=BuildChartOption('heatmap',{ 'file': page.JsonData, 'name': 'beijing'});
+	   	myChart.setOption(m)
 	}
 }
