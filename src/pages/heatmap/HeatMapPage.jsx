@@ -31,8 +31,8 @@ export default class HeatMapPage extends React.Component {
 
 	initHeatMapPage() {
 		let {page} = this.props;
-		var myChart=Echarts.init(document.getElementById('mypage_ctl00'));
-		 	Echarts.registerMap('beijing', page.JsonData);
+		var myChart=echarts.init(document.getElementById('mypage_ctl00'));
+		 	echarts.registerMap('beijing', page.JsonData);
 	   	var m=BuildChartOption('heatmap',{ 'file': page.JsonData, 'name': 'beijing'});
 	   	myChart.setOption(m)
 	}
