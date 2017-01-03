@@ -3,7 +3,10 @@ import React from 'react';
 import ActorFactory from '../../common/ActorFactory';
 import PageScript from '../../common/PageScript'
 
-export default class StagePage extends React.Component {
+/**
+ * StageWebPage.aspx
+ */
+export default class StageWebPage extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -62,7 +65,7 @@ export default class StagePage extends React.Component {
 				width: page.Size.Width,
 				height: page.Size.Height
 			};
-			
+
 		return (
 			<div id="mypage" {...page_props}>
 				<canvas id="pageCanvas" {...canvas_props}></canvas>

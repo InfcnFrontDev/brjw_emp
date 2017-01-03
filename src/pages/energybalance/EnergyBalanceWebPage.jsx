@@ -1,11 +1,14 @@
 import React from 'react';
 
-export default class EnergyBalancePage extends React.Component {
+/**
+ * EnergyBalanceWebPage.aspx
+ */
+export default class EnergyBalanceWebPage extends React.Component {
 
 	constructor(props) {
 		super(props);
 		this.state = {
-			
+
 		}
 	}
 
@@ -14,12 +17,12 @@ export default class EnergyBalancePage extends React.Component {
 		let style = {
 			'width':page.Size.Width,
 			'height':page.Size.Height,
-			'position':'absolute', 
+			'position':'absolute',
 			'left': '0px',
-			'top': '0px', 
+			'top': '0px',
 			'border': '1px solid ',
 			'background':'url(../images/954586bb-bb08-4b8b-bb96-ae82e83f8fa0.png)'
-			 
+
 		};
 		let canvas_style={};
 		canvas_style = {
@@ -32,7 +35,7 @@ export default class EnergyBalancePage extends React.Component {
 			<div id="mypage_ctl00" style={style}>
 				<canvas id="canvas" {...canvas_style}></canvas>
 			</div>
-			
+
 		)
 
 	}

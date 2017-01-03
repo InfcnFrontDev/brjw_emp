@@ -1,6 +1,9 @@
 import React from 'react';
 
-export default class Page extends React.Component {
+/**
+ * TableWebPage.aspx
+ */
+export default class TableWebPage extends React.Component {
 
 	render() {
 		return (

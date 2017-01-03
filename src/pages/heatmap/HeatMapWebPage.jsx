@@ -1,5 +1,9 @@
 import React from 'react';
-export default class HeatMapPage extends React.Component {
+
+/**
+ * HeatMapWebPage.aspx
+ */
+export default class HeatMapWebPage extends React.Component {
 
 	constructor(props) {
 		super(props);

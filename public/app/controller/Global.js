@@ -34,7 +34,6 @@ Ext.define('MyUI.controller.Global', {
 		'InputPage': 'icon-edit',
 		'TablePage': 'icon-table',
 		'MapPage': 'icon-map',
-		'RichEditPage': 'icon-edit',
 		'HtmlPage': 'icon-html',
 		'RichEditPage': 'icon-word',
 		'ExcelPage': 'icon-excel',

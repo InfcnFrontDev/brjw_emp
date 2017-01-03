@@ -1,7 +1,7 @@
 import React from 'react'
 
 import BaseApp from '../../components/BaseApp'
-import TableWebPage from './TableWebPage'
+import InputWebPage from './InputWebPage'
 
 /**
  * 页面的根组件
@@ -25,7 +25,7 @@ export default class App extends BaseApp {
 			{page} = this.state;
 
 		if (page) {
-			WebPage = <TableWebPage page={page}/>;
+			WebPage = <InputWebPage page={page}/>;
 		}
 
 		return (

@@ -1,6 +1,9 @@
 import React from 'react';
 
-export default class Page extends React.Component {
+/**
+ * HtmlWebPage.aspx
+ */
+export default class HtmlWebPage extends React.Component {
 
 	render() {
 		let {page} = this.props;

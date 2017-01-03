@@ -23,7 +23,7 @@ class JsArray {
 
 export default {
 
-	// StagePage
+	// StageWebPage
 	loadStagePageJs(page, callback){
 		let roles = page.Roles,
 			jsArray = new JsArray();
