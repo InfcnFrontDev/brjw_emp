@@ -13,6 +13,57 @@
 	<div class=setting-detail id=stthld>
 		<div class=detail-bg></div>
 		<div class="plzhld clearfix">
+			<div class=mod-setting-profile>
+				<div class="setting-profile-title ">基本资料</div>
+					<form id=profile class=setting-profile-form method=POST>
+						<table class=setting-profile-table>
+							<tbody>
+							<tr>
+								<th class=personal-detail-th>用户名:</th>
+								<td class=personal-detail-td>
+								<input type=text name=passport_contactinfo  class="x22mod-cus-input-242 mod-cus-input">
+						 	<tr>
+								<th class=personal-detail-th>邮箱:</th>
+								<td class=personal-detail-td>
+								<input type=text name=passport_contactinfo  class="x22mod-cus-input-242 mod-cus-input">
+							<tr>
+								<th>性别:</th>
+								<td class=line30>
+									<input name=passport_sex id=passport-sex-1 type=radio value=1>
+									<label class=profile-gender for=passport-sex-1>男</label>
+									<input name=passport_sex id=passport-sex-2 type=radio value=2>
+									<label for=passport-sex-2 class=profile-gender>女</label>
+							<tr>
+								<th>生日:</th>
+								<td>
+									<select id=passport_birthday_year name=passport_birthday_year>
+										<option value=none>请选择
+									</select>
+							<tr>
+								<th class=personal-detail-th>联系方式:</th>
+								<td class=personal-detail-td>
+								<input type=text name=passport_contactinfo id=passport_contactinfo class="mod-cus-input-242 mod-cus-input">
+							<tr>
+								<th>血型:</th>
+								<td><select id=passport_blood name=passport_blood>
+									<option value=none>请选择</select>
+							<tr>
+								<th>出生地:</th>
+								<td><select id=passport_hometown_province name=passport_hometown_province>
+									<option value=none>请选择</select>
+							<tr>
+								<th>居住地:</th>
+								<td><select id=passport_reside_province name=passport_hometown_province>
+									<option value=none>请选择</select>
+							<tr>
+								<th class=personal-detail-th>个人简介:</th>
+								<td class=personal-detail-td>
+									<textarea class="mod-cus-input mod-cus-input-4"></textarea>
+						</table>
+						<input type=button class="setting-submit-btn setting-submit-ml100" value=保存>
+					</form>
+				<iframe id=proxy class=setting-proxy width=0 height=0 ></iframe>
+			</div>
 		</div>
 	</div>
 	<div style="height:60px;"></div>
@@ -28,12 +79,12 @@
 </script>
 <script src="js/setting.js"></script>
 <script>
-	App.onPageletArrive({
-		"targetId": "stthld", "viewType": "SettingProfile",
-		"tplContent": "<div class=mod-setting-profile> " +
-		"<div class=\x22setting-profile-title yahei\x22>基本资料<\/div>" +
-		" <form id=profile class=setting-profile-form method=POST action=\x22https:\/\/passport.baidu.com\/v2\/?ucenterset\x22> <table class=setting-profile-table> <tbody><tr> <th class=personal-detail-th>用户名:<\/th> <td class=personal-detail-td> <input type=text name=passport_contactinfo id=passport_contactinfo class=\x22mod-cus-input-242 mod-cus-input\x22>  <tr> <th class=personal-detail-th>邮箱:<\/th> <td class=personal-detail-td> <input type=text name=passport_contactinfo id=passport_contactinfo class=\x22mod-cus-input-242 mod-cus-input\x22> <tr> <th>性别:<\/th> <td class=line30> <input name=passport_sex id=passport-sex-1 type=radio value=1 > <label class=profile-gender for=passport-sex-1>男<\/label> <input name=passport_sex id=passport-sex-2 type=radio value=2 > <label for=passport-sex-2 class=profile-gender>女<\/label>   <tr> <th>生日:<\/th> <td> <select id=passport_birthday_year name=passport_birthday_year><option value=none>请选择<\/select>  <tr> <th class=personal-detail-th>联系方式:<\/th> <td class=personal-detail-td> <input type=text name=passport_contactinfo id=passport_contactinfo class=\x22mod-cus-input-242 mod-cus-input\x22> <tr> <th>血型:<\/th> <td> <select id=passport_blood name=passport_blood><option value=none>请选择<\/select>   <tr> <th>出生地:<\/th> <td> <select id=passport_hometown_province name=passport_hometown_province><option value=none>请选择<\/select>   <tr> <th>居住地:<\/th> <td> <select id=passport_reside_province name=passport_hometown_province><option value=none>请选择<\/select>   <tr> <th class=personal-detail-th>个人简介:<\/th> <td class=personal-detail-td> <textarea name=\x22passport_userdetail\x22 id=\x22passport_userdetail\x22 class=\x22mod-cus-input mod-cus-input-4\x22><\/textarea>    <\/table> <input type=submit class=\x22setting-submit-btn setting-submit-ml100\x22 value=\x22保存\x22><\/form> <iframe id=proxy class=setting-proxy width=0 height=0 src=\/p\/setting\/profile\/proxy><\/iframe><\/div> "
-	});
+	console.log($('#passport_contactinfo').val());
+	$('#passport_contactinfo').on('keyup',function(){
+
+		console.log($(this).val());
+	})
+
 	F.use(['custom_select_birth/main', 'custom_select/main', 'custom_select_city/main',
 		'custom_input/main', 'dialog/dialogmanager', 'setting_proxy/proxy'], function (BirthControl, SelectControl, CityControl, CustomInput, dialog, Proxy) {
 		var form = P.g('profile'),
@@ -221,5 +272,50 @@
 			birthday = null;
 			blood = null;
 		});
+		/*App.onPageletArrive({
+		 "targetId": "stthld", "viewType": "SettingProfile",
+		 "tplContent": "<div class=mod-setting-profile> " +
+		 "<div class=\x22setting-profile-title yahei\x22>基本资料<\/div>" +
+		 " <form id=profile class=setting-profile-form method=POST action=\x22https:\/\/passport.baidu.com\/v2\/?ucenterset\x22> " +
+		 "<table class=setting-profile-table> " +
+		 "<tbody><tr> <th class=personal-detail-th>用户名:<\/th>" +
+		 " <td class=personal-detail-td> " +
+		 "<input type=text name=passport_contactinfo id=passport_contactinfo class=\x22mod-cus-input-242 mod-cus-input\x22> " +
+		 " <tr> <th class=personal-detail-th>邮箱:<\/th> " +
+		 "<td class=personal-detail-td> " +
+		 "<input type=text name=passport_contactinfo id=passport_contactinfo class=\x22mod-cus-input-242 mod-cus-input\x22>" +
+		 " <tr> <th>性别:<\/th>" +
+		 " <td class=line30>" +
+		 " <input name=passport_sex id=passport-sex-1 type=radio value=1 >" +
+		 " <label class=profile-gender for=passport-sex-1>男<\/label>" +
+		 " <input name=passport_sex id=passport-sex-2 type=radio value=2 >" +
+		 " <label for=passport-sex-2 class=profile-gender>女<\/label> " +
+		 "  <tr> <th>生日:<\/th>" +
+		 " <td> " +
+		 "<select id=passport_birthday_year name=passport_birthday_year>" +
+		 "<option value=none>请选择<\/select> " +
+		 " <tr> <th class=personal-detail-th>联系方式:<\/th>" +
+		 " <td class=personal-detail-td> " +
+		 "<input type=text name=passport_contactinfo id=passport_contactinfo class=\x22mod-cus-input-242 mod-cus-input\x22>" +
+		 " <tr> <th>血型:<\/th> " +
+		 "<td> " +
+		 "<select id=passport_blood name=passport_blood><option value=none>请选择<\/select>  " +
+		 " <tr> <th>出生地:<\/th>" +
+		 " <td> " +
+		 "<select id=passport_hometown_province name=passport_hometown_province>" +
+		 "<option value=none>请选择<\/select> " +
+		 "  <tr> <th>居住地:<\/th> <td> " +
+		 "<select id=passport_reside_province name=passport_hometown_province>" +
+		 "<option value=none>请选择<\/select>  " +
+		 " <tr> <th class=personal-detail-th>个人简介:<\/th> " +
+		 "<td class=personal-detail-td> " +
+		 "<textarea name=\x22passport_userdetail\x22 id=\x22passport_userdetail\x22 class=\x22mod-cus-input mod-cus-input-4\x22>" +
+		 "<\/textarea>   " +
+		 " <\/table> " +
+		 "<input type=submit class=\x22setting-submit-btn setting-submit-ml100\x22 value=\x22保存\x22>" +
+		 "<\/form> " +
+		 "<iframe id=proxy class=setting-proxy width=0 height=0 src=\/p\/setting\/profile\/proxy><\/iframe>" +
+		 "<\/div> "
+		 });*/
 	});
 </script>
