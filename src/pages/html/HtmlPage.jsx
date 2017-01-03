@@ -29,7 +29,7 @@ export default class Page extends React.Component {
 		for(var i=0; i<tem.length; i++){
 			str+=tem[i];
 		}
-		console.log(str);
+		// console.log(str);
 
 		this.refs.htmlBody.innerHTML =str;
 		let scriptNode=document.createElement("script");

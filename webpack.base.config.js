@@ -1,5 +1,4 @@
 var path = require('path');
-var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var glob = require('glob')
 
@@ -39,7 +38,6 @@ function getHtmlPlugins(entries) {
 entry = getEntry('./src/pages/*');
 plugins = getHtmlPlugins(entry);
 
-
 module.exports = {
 	entry,
 	output: {
@@ -53,7 +51,7 @@ module.exports = {
 	module: {
 		loaders: [
 			{
-				test: /\.js[x]?$/,
+				test: /\.jsx?$/,
 				exclude: /(node_modules|bower_components|public\/)/,
 				loader: "babel"
 			},
