@@ -1,7 +1,5 @@
 import loadjs from 'loadjs'
 
-import ActorTypes from './ActorTypes'
-
 // JS Array 去重复
 class JsArray {
 
@@ -23,26 +21,21 @@ class JsArray {
 
 export default {
 
-	// StageWebPage
-	loadStagePageJs(page, callback){
-		let roles = page.Roles,
-			jsArray = new JsArray();
+	/**
+	 * 页面动态加载js
+	 * @param jss
+	 * @param callback
+	 */
+	loadJs(jss, callback){
+		if (!window.scripts) {
+			window.scripts = new JsArray();
+		}
 
-		roles.forEach(r => {
-			let actorType = r.Actor.ActorType;
-			if (ActorTypes.echarts.includes(actorType)) {
-				jsArray.push('../scripts/EChartsHelper.js');
-			} else if (ActorTypes.gauge.includes(actorType)) {
-				jsArray.push('../scripts/BrGauge.js');
-				jsArray.push('../scripts/mscorlib.js');
-				jsArray.push('../scripts/PerfectWidgets.js');
-				jsArray.push('../scripts/pageroles/GaugeBase.js');
-			} else {
-				jsArray.push('../scripts/pageroles/' + actorType + '.js');
-			}
+		jss.forEach(js => {
+			scripts.push(js);
 		});
 
-		loadjs(jsArray.array(), {success: callback});
+		loadjs(scripts.array(), {success: callback});
 	}
 
 }

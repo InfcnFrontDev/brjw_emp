@@ -1,3 +1,6 @@
+/**
+ * 图元分类
+ */
 export default {
 	echarts: [
 		"Ems.ECharts.Actor.EChartsBarActor",
@@ -11,7 +14,7 @@ export default {
 		"StoreCooling.OwmPump",
 		"StoreCooling.Unit"
 	],
-	textActors: [// 格式文本和滚动文本
+	text: [// 格式文本和滚动文本
 		"Ems.StdLib.FormatLabel",
 		"Ems.StdLib.MultilineText"
 	],

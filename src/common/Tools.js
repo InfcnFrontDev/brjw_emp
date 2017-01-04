@@ -1,6 +1,8 @@
 export default {
 
-	// 解析 url search
+	/**
+	 * 解析 url search
+	 */
 	getParams: function () {
 		var query = location.search.substring(1),
 			values = {

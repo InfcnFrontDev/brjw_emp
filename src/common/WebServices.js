@@ -25,7 +25,7 @@ let newPromise = function (url) {
 
 export default {
 	/**
-	 * 获取CPU信息
+	 * 调用页面数据接口，/WebServices/PageService.ashx
 	 */
 	getPageService(pageid, linkid, title) {
 		return newPromise(MyUI.apiUrl.pageService + '?pageid=' + pageid + '&linkid=' + linkid + '&title=' + (title || ''));
