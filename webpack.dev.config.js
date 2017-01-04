@@ -55,11 +55,12 @@ module.exports = merge(webpackBaseConfig, {
 		// embed the webpack-dev-server runtime into the bundle
 		inline: true,
 		// serve index.html in place of 404 responses to allow HTML5 history
-		historyApiFallback: true,
+		historyApiFallback: false,
 
 		progress: true,
 
 		port: PORT,
+
 		host: HOST
 	},
 	plugins: [

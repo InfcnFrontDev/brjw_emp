@@ -5,7 +5,7 @@
   "main": "''",
   "scripts": {
     "build": "webpack --config webpack.prod.config.js --progress --profile --colors",
-    "start": "webpack-dev-server --config webpack.dev.config.js --progress --profile --colors --inline",
+    "start": "webpack-dev-server --config webpack.dev.config.js --progress --profile --colors",
     "lint": "eslint --ext js --ext jsx src || exit 0"
   },
   "repository": {
