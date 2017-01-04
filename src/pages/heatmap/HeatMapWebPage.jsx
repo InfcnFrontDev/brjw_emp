@@ -5,39 +5,57 @@ import React from 'react';
  */
 export default class HeatMapWebPage extends React.Component {
 
+	/**
+	 * 构造方法
+	 * @param props
+	 */
 	constructor(props) {
 		super(props);
-		this.state = {
-
-		}
+		this.state = {}
 	}
 
+	/**
+	 * 组件渲染
+	 * @returns {XML}
+	 */
 	render() {
-		let {page} = this.props;
+		let {page} = this.props,
+			heatmapId = 'heatmap-' + page.PageID;
+
 		let style = {
 			'position': 'absolute',
 			'left': 0,
 			'top': 0,
-			'width':page.Width,
-			'height':page.Height,
-			'border': ' 1px solid #000',
+			'width': page.Width,
+			'height': page.Height,
+			'border': '1px solid #000',
 		};
 
 		return (
-				<div  id="mypage_ctl00" style={style}></div>
+			<div ref="heatmap" id={heatmapId} style={style}></div>
 		)
 
 	}
 
+	/**
+	 * 组件渲染完成
+	 */
 	componentDidMount() {
-		this.initHeatMapPage();
+		this.init();
 	}
 
-	initHeatMapPage() {
-		let {page} = this.props;
-		var myChart=echarts.init(document.getElementById('mypage_ctl00'));
-		 	echarts.registerMap('beijing', page.JsonData);
-	   	var m=BuildChartOption('heatmap',{ 'file': page.JsonData, 'name': 'beijing'});
-	   	myChart.setOption(m)
+	/**
+	 * 初始化
+	 */
+	init() {
+		let {page} = this.props,
+			chart;
+
+		chart = echarts.init(this.refs.heatmap);
+		echarts.registerMap('beijing', page.JsonData);
+		var m = BuildChartOption('heatmap', {'file': page.JsonData, 'name': 'beijing'});
+		chart.setOption(m);
+
+		this.setState({chart});
 	}
 }

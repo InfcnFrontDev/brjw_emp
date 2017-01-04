@@ -30,7 +30,7 @@ export default class NewMapWebPage extends React.Component {
 	 */
 	render() {
 		let {page} = this.props,
-			mapId = 'map-' + page.PageID;
+			newmapId = 'newmap-' + page.PageID;
 
 		let style = {
 			'position': 'absolute',
@@ -42,9 +42,7 @@ export default class NewMapWebPage extends React.Component {
 		};
 
 		return (
-			<div>
-				<div ref="map" id={mapId} style={style}></div>
-			</div>
+			<div ref="newmap" id={newmapId} style={style}></div>
 		)
 
 	}
@@ -60,7 +58,7 @@ export default class NewMapWebPage extends React.Component {
 	init() {
 		let {page} = this.props, bmap;
 
-		bmap = new BMap.Map(this.refs.map.id);
+		bmap = new BMap.Map(this.refs.newmap.id);
 		bmap.centerAndZoom(new BMap.Point(page.Center.Lng, page.Center.Lat), page.ZoomLevel);
 		bmap.addControl(new BMap.MapTypeControl());
 		bmap.enableScrollWheelZoom(true);
