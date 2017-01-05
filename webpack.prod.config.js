@@ -11,7 +11,7 @@ module.exports = merge(webpackBaseConfig, {
 	output: {
 		publicPath: '/',
 		path: path.join(__dirname, 'public'),
-		filename: 'js/[name]-[chunkhash].js'
+		filename: 'pages/[name]-[chunkhash].js'
 	},
 	module: {
 		loaders: [
@@ -44,7 +44,7 @@ module.exports = merge(webpackBaseConfig, {
 				drop_debugger: true
 			}
 		}),
-		new ExtractTextPlugin('css/[name]-[chunkhash].css', {
+		new ExtractTextPlugin('pages/[name]-[chunkhash].css', {
 			allChunks: true
 		}),
 		new webpack.optimize.DedupePlugin()
