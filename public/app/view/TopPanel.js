@@ -2,23 +2,21 @@ Ext.define('MyUI.view.TopPanel', {
 	extend: 'Ext.Container',
 	xtype: 'toppanel',
 	id: 'toppanel',
-	title: '能源管理平台',
 	height: 52,
 	layout: {
 		type: 'hbox',
 		align: 'middle'
 	},
 	initComponent: function () {
-		document.title = this.title;
+		document.title = MyUI.title;
 
 		this.items = [{
 			xtype: 'component',
-			id: 'toppanel-logo',
-			cls: ['iconfont', 'icon-icon']
+			id: 'toppanel-logo'
 		}, {
 			xtype: 'component',
 			id: 'toppanel-title',
-			html: this.title,
+			html: MyUI.title,
 			flex: 1
 		}, {
 			xtype: 'container',

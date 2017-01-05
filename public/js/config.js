@@ -4,6 +4,9 @@
 
 var MyUI = MyUI || {};
 
+// app title
+MyUI.title = '能源管理平台';
+
 // 接口路径
 MyUI.apiPath = 'http://192.168.1.165/';
 
