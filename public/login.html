@@ -1,72 +1,39 @@
 <!DOCTYPE HTML>
-<html manifest="">
+<html>
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
-	<title>能源管理平台</title>
-	<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/login.css">
-	<script src="plugins/jquery/jquery.min.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>系统登录</title>
+	<link href="css/login.css" rel="stylesheet" type="text/css">
 </head>
-<body>
-	<div class="login-box">		
-  	<div class="login-logo">能源管理平台</div>
-    <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
-        <form action="" method="post">
-          <div class="form-group has-feedback">
-            <input type="email" class="form-control" placeholder="Email">
-            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-          </div>
-          <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Password">
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-          </div>
-          <div class="line"></div>
-          <div class="row">
-            <div class="col-xs-6">
-               <button type="submit" class="btn-c btn-chongzhi">重置</button>
-            </div>
-            <!-- /.col -->
-            <div class="col-xs-6">
-              <button type="submit" class="btn-c btn-denglu">登录</button>
-            </div>
-            <!-- /.col -->
-          </div>
-        </form>
-        <div class="kehuduan text-center">        
-            <a href="#" id="xiazai" class="">下载客户端</a>
-        </div>  
-    </div>
-  </div>
-  <div id="menban" class="hidden">
-      <div class="erweima-box">
-          <span class="close">X</span>
-          <div class="box-main">
-              <p>手机扫描左侧二维码下载</p>
-              <div class="div-le">
-                  <img src="images/erweima.jpg" alt="">
-              </div>
-              <div class="div-ri">
-                  <a href="https://itunes.apple.com/us/app/emsanywhere/id1136091122?mt=8&ign-mpt=uo%3D4" class="a-button"><img src="images/iphone.png" alt="">Iphone</a>
-                  <a href="http://192.168.1.165/AppDownLoad/EMSAnyWhere.apk" class="a-button"><img src="images/shouji.png" alt="">Android</a>
-              </div>
-          </div>
-      </div>
-  </div>
-</body>
 
+<body class="login">
+<div class="login_m">
+	<div class="login_logo"><img src="images/logo-login.png" width="196" height="46"></div>
+	<div class="login_boder">
+
+		<div class="login_padding" id="login_model">
+			<h2>USERNAME</h2>
+			<label>
+				<input type="text" id="username" class="txt_input txt_input2" placeholder="Username"/>
+			</label>
+			<h2>PASSWORD</h2>
+			<label>
+				<input type="password" name="textfield2" id="userpwd" class="txt_input" placeholder="Password"/>
+			</label>
+			<p class="forgot">&nbsp;</p>
+			<div class="rem_sub">
+				<div class="rem_sub_l">
+					<input type="checkbox" name="checkbox" id="save_me">
+					<label for="save_me">Remember me</label>
+				</div>
+				<label>
+					<input type="submit" class="sub_button" name="button" id="button" onclick="location='./'"
+								 value="LOGIN" style="opacity: 0.7;">
+				</label>
+			</div>
+		</div>
+
+	</div>
+</div>
+</body>
 </html>
-<script>
-$( document ).ready(function() {
- 
-     $('#xiazai').click(function(){
-        console.log(222)
-        $('#menban').removeClass('hidden');
-      });
-      $('.close').click(function(){
-          $('#menban').addClass('hidden');
-      })
-});
-</script>

@@ -22,7 +22,7 @@ export default class Chart extends React.Component {
 		let chartId = 'chart-' + uuid.v1();
 
 		return (
-			<div ref="chart" id={chartId} className="chart-area">Chart</div>
+			<div ref="chart" id={chartId} className="chart-area"></div>
 		)
 	}
 
@@ -33,22 +33,16 @@ export default class Chart extends React.Component {
 		let me = this,
 			{url} = this.props;
 
-		$.getJSON(url, function (result) {
-			me.init(result);
-		});
-	}
-
-	/**
-	 * 初始化图表
-	 * @param option
-	 */
-	init(option) {
 		let chart = echarts.init(this.refs.chart);
-		chart.setOption(option);
-
 		// 自适应大小
 		$(window).on('resize', function () {
 			chart.resize();
+		});
+
+		chart.showLoading();
+		$.getJSON(url, function (result) {
+			chart.setOption(result);
+			chart.hideLoading();
 		});
 	}
 

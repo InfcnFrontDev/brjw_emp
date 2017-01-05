@@ -89,7 +89,7 @@ Ext.define('MyUI.controller.Global', {
 		});
 	},
 	logout: function () {
-		console.log('logout');
+		location = './login.html';
 	},
 	beforeRedirect: function (url) {
 		// Pages/StageWebPage.aspx?pageid=19508fcc-297a-4cf1-8076-31c2fe3b7379&linkid=7c62e2b2-23ff-4a7e-a8e0-1572f636fee8&title=echarts
