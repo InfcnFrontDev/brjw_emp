@@ -4,14 +4,13 @@ var webpack = require('webpack');
 var merge = require('webpack-merge');
 var webpackBaseConfig = require('./webpack.base.config');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 
 module.exports = merge(webpackBaseConfig, {
 	output: {
 		publicPath: '/',
 		path: path.join(__dirname, 'public'),
-		filename: 'pages/[name]-[chunkhash].js'
+		filename: 'pages/[name]-[hash].js'
 	},
 	module: {
 		loaders: [
@@ -30,7 +29,9 @@ module.exports = merge(webpackBaseConfig, {
 		]
 	},
 	plugins: [
-		// new WebpackCleanupPlugin(),
+		new WebpackCleanupPlugin({
+			exclude: ["!pages/*"],
+		}),
 		new webpack.DefinePlugin({
 			'process.env': {
 				NODE_ENV: '"production"'
@@ -44,7 +45,7 @@ module.exports = merge(webpackBaseConfig, {
 				drop_debugger: true
 			}
 		}),
-		new ExtractTextPlugin('pages/[name]-[chunkhash].css', {
+		new ExtractTextPlugin('pages/[name]-[hash].css', {
 			allChunks: true
 		}),
 		new webpack.optimize.DedupePlugin()

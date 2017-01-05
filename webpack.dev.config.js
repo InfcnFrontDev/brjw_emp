@@ -3,10 +3,6 @@ var path = require('path');
 var webpack = require('webpack');
 var merge = require('webpack-merge');
 var webpackBaseConfig = require('./webpack.base.config');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-
-const HOST = process.env.HOST || "127.0.0.1";
-const PORT = process.env.PORT || "3000";
 
 // add hot-reload related code to entry chunks
 Object.keys(webpackBaseConfig.entry).forEach(function (name) {
@@ -59,9 +55,9 @@ module.exports = merge(webpackBaseConfig, {
 
 		progress: true,
 
-		port: PORT,
+		host: "127.0.0.1",
 
-		host: HOST
+		port: "3000"
 	},
 	plugins: [
 		new webpack.DefinePlugin({

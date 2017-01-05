@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack --config webpack.prod.config.js --progress --profile --colors",
     "start": "webpack-dev-server --config webpack.dev.config.js --progress --profile --colors",
+    "check": "webpack-dev-server --content-base public/ --port 3000",
     "lint": "eslint --ext js --ext jsx src || exit 0"
   },
   "repository": {
