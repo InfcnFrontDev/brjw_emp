@@ -1,7 +1,13 @@
 /*标题栏*/
 #toppanel {
-    background-color: #1ABC9C;
-    border-bottom: 1px solid #BEE1DA;
+    background-color: #404040;
+    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #4d4d4d), color-stop(0%, #333));
+    background-image: -webkit-linear-gradient(top, #4d4d4d, #333);
+    background-image: -moz-linear-gradient(top, #4d4d4d, #333);
+    background-image: -o-linear-gradient(top, #4d4d4d, #333);
+    background-image: -ms-linear-gradient(top, #4d4d4d, #333);
+    background-image: linear-gradient(top, #4d4d4d, #333);
+    border-bottom: 1px solid #1a1a1a;
 }
 
 /*标题栏 logo*/
@@ -9,7 +15,7 @@
     color: white;
     font-size: 26px;
     line-height: 1.2;
-    margin: 0 12px;
+    margin: 0 5px 0 15px;
 }
 
 /*标题栏 title*/
@@ -32,13 +38,12 @@
     cursor: pointer;
 }
 
-/*导航栏 图标*/
-#navpanel .x-title-icon {
-    font-size: 20px;
-}
-
 /*内容标签 图标*/
 #mainpanel .x-tab-icon-el {
     font-size: 14px;
 }
 
+/*导航栏 树的叶子节点图标颜色*/
+#navpanel .x-panel-body .iconfont {
+    color: #000000;
+}

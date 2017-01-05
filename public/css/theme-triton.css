@@ -9,7 +9,7 @@
     color: white;
     font-size: 26px;
     line-height: 1.2;
-    margin: 0 12px;
+    margin: 0 5px 0 15px;
 }
 
 /*标题栏 title*/
@@ -32,12 +32,12 @@
     cursor: pointer;
 }
 
-/*导航栏 图标*/
-#navpanel .x-panel-header-title .x-title-icon {
-    font-size: 20px;
+/*导航栏 标题栏*/
+#navpanel .x-panel-header-title .x-title-text {
+    color: #fff;
 }
 
-    /*内容标签 图标*/
+/*内容标签 图标*/
 #mainpanel .x-tab-icon-el {
     font-size: 14px;
 }

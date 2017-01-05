@@ -6,7 +6,6 @@ Ext.define('MyUI.view.NavPanel', {
 
 	id: 'navpanel',
 	title: '导航菜单',
-	iconCls: 'iconfont icon-nav',
 
 	useArrows: true,
 	rootVisible: false,

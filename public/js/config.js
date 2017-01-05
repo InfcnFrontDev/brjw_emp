@@ -24,8 +24,8 @@ MyUI.iconClsMaps = {
 	'HtmlPage': 'icon-html',
 	'RichEditPage': 'icon-word',
 	'ExcelPage': 'icon-excel',
-	'SlidePage': 'icon-13',
+	'SlidePage': 'icon-celveicon',
 	'LayoutPage': 'icon-13',
-	'EnergyBalancePage': 'icon-13',
+	'EnergyBalancePage': 'icon-junhengqi',
 	'HeatMapPage': 'icon-iconfontrelitu'
 };

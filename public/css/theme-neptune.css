@@ -1,7 +1,13 @@
 /*标题栏*/
 #toppanel {
-    background-color: #89BEE5;
-    border-bottom: 1px solid #CAD7E0;
+    background-color: #81af34;
+    background-image: -webkit-gradient(linear, top, bottom, color-stop(0%, #8fc33a), color-stop(0%, #739b2e));
+    background-image: -webkit-linear-gradient(top, #8fc33a, #739b2e);
+    background-image: -moz-linear-gradient(top, #8fc33a, #739b2e);
+    background-image: -o-linear-gradient(top, #8fc33a, #739b2e);
+    background-image: -ms-linear-gradient(top, #8fc33a, #739b2e);
+    background-image: linear-gradient(top,#8fc33a, #739b2e);
+    border-bottom: 1px solid #567422;
 }
 
 /*标题栏 logo*/
@@ -9,7 +15,7 @@
     color: white;
     font-size: 26px;
     line-height: 1.2;
-    margin: 0 12px;
+    margin: 0 5px 0 15px;
 }
 
 /*标题栏 title*/
@@ -32,27 +38,12 @@
     cursor: pointer;
 }
 
-/*导航栏 图标*/
-#navpanel .x-title-icon {
-    font-size: 20px;
-}
-
 /*内容标签 图标*/
 #mainpanel .x-tab-icon-el {
     font-size: 14px;
-}
-
-<<<<<<< HEAD
-=======
-.ks-profile-switcher {
-    color: white;
-    font-size: 21px;
-    cursor: pointer;
-    margin: 0 15px;
 }
 
 /*导航栏 树的叶子节点图标颜色*/
 #navpanel .x-panel-body .iconfont{
     color: #000000;
 }
->>>>>>> cc80af5bb71408bcddda11fa21b45f1bd6aead45

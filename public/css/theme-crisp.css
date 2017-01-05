@@ -1,7 +1,7 @@
 /*标题栏*/
 #toppanel {
-    background-color: #28384a;
-    border-bottom: 1px solid #0d1218;
+    background-color: #2a3f5d;
+    border-bottom: 1px solid #121b28;
 }
 
 /*标题栏 logo*/
@@ -9,7 +9,7 @@
     color: white;
     font-size: 26px;
     line-height: 1.2;
-    margin: 0 12px;
+    margin: 0 5px 0 15px;
 }
 
 /*标题栏 title*/
@@ -32,13 +32,12 @@
     cursor: pointer;
 }
 
-/*导航栏 图标*/
-#navpanel .x-title-icon {
-    font-size: 20px;
-}
-
 /*内容标签 图标*/
 #mainpanel .x-tab-icon-el {
     font-size: 14px;
 }
 
+/*导航栏 树的叶子节点图标颜色*/
+#navpanel .x-panel-body .iconfont {
+    color: #000000;
+}

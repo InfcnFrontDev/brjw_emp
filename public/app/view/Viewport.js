@@ -11,7 +11,7 @@ Ext.define('MyUI.view.Viewport', {
 		split: true,
 		collapsible: true,
 		width: 300,
-		minWidth: 100
+		minWidth: 150
 	}, {
 		region: 'center',
 		xtype: 'mainpanel'
