@@ -3,7 +3,7 @@ import React from 'react'
 import Tools from '../common/Tools'
 import WebServices from '../common/WebServices'
 
-export default class App extends React.Component {
+export default class BaseApp extends React.Component {
 
 	constructor(props) {
 		super(props)

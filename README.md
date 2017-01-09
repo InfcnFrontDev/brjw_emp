@@ -8,13 +8,21 @@ this is a [React](https://facebook.github.io/react/), [Webpack](http://webpack.g
 
 开始之前，检查系统是否安装 [nodejs](https://nodejs.org/en/) 。
 
-* 安装依赖库:
+
+* 全局命令安装:
+
+```
+npm install -g webpack
+npm install -g webpack-dev-server
+```
+
+* 安装项目依赖库:
 
 ```
 npm install
 ```
 
-* 运动开发模式，启动服务:
+* 运动开发模式，启动Web服务:
 
 ```
 npm start
